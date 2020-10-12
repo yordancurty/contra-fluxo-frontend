@@ -280,7 +280,7 @@ color: #000000;
 
   .card{
     width: 20rem;
-    height: 32.7rem;
+    height: 29rem;
     border-color: black;
     border-radius: 0;
 }
@@ -292,7 +292,7 @@ color: #000000;
     width: max-content;
     max-width: none;
     font-weight: 600;
-    bottom: 135px;
+    bottom: 100px;
     left: -70px;
 }
 
@@ -303,7 +303,8 @@ color: #000000;
     width: max-content;
     max-width: none;
     font-weight: 600;
-    top: 140px;
+    top: 110px;
+    left: -35px;
 }
 
 .hr-destaques-left{
@@ -311,9 +312,9 @@ color: #000000;
     transform: rotate(90deg);
     position: relative;
     bottom: -100px;
-    left: -120px;
+    left: -85px;
     max-width: none;
-    width: 300px;
+    width: 230px;
     border-top: 1px solid black;
 }
 
@@ -324,21 +325,21 @@ color: #000000;
     bottom: 90px;
     right: 52px;
     max-width: none;
-    width: 300px;
+    width: 230px;
     border-top: 1px solid black;
 }
 
-/* --------- destaque/homepage --------- */
+/* --------- manifesto/homepage --------- */
 
 .homepage-manifest h1{
     margin-top: 50px;
-    font-size: 60px;
+    font-size: 55px;
     margin-left: 5rem;
 
 }
 
 .photo-manifesto{
-    width: 35rem;
+    width: 30rem;
 }
 
 .p-manifesto{
@@ -355,5 +356,13 @@ color: #000000;
     
     color: #000000;
     }
+    .menu-item{
+        font-size: 17px;
+    }
 
+.hr-manifesto{
+    margin-top: -10px;
+    width: 87vw;
+    border-top: 1px solid black ;
+}
  }
