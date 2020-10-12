@@ -182,10 +182,40 @@ color: #000000;
 
 
 
+/* ------- Formulário LOGIN e SIGNUP -------- */
 
+.form-container{
+    background-color: #ffd600;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
 
+.form-box-1{
+width: 500px;
+height: 351px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+left: 437px;
+top: 227px;
+position: absolute;
+}
 
+.logo-form{
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.5rem;
+}
 
+.btn-form{
+width: 70px;
+height: 25px;
+color: black;
+font-size: 0.8rem;
+background: #FFD600;
+
+}
 
 /* --------- foooter --------- */
 
@@ -209,4 +239,4 @@ color: #000000;
     
     /* --------- foooter --------- */
 
-/*  */
+

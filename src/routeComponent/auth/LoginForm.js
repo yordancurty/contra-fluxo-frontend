@@ -1,22 +1,24 @@
 import React from 'react';
+import logo from '../../../src/logo.png';
 
 function LoginForm(){
     return (
-        <div>
+        <div className="form-container">
+        <form className="form-box-1">
         <h1>Bem-vindx de volta a CONTRAFLUXO</h1>
-        <form>
-              <div class="input-group-prepend">
-              <label for="formGroupExampleInput">Email:</label>
-              <div class="input-group-text">@</div>
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Email" />
+        <div class="form-group">
+                <label for="formGroupExampleInput">Email:</label>
+                <input type="password" class="form-control" id="formGroupExampleInput" placeholder="@" />
              </div>
              <div class="form-group">
                 <label for="formGroupExampleInput">Senha:</label>
                 <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*****" />
              </div>
-             <button type="submit" class="btn btn-primary">Entrar</button>
+             <button type="submit" class="btn-form btn btn-light">Entrar</button>
+             <div className="d-flex justify-content-end">
+             <img className="logo-form" src={logo} alt="logo"/>
+             </div>
         </form>
-        <img src={logo} alt="logo"/>
         </div>
     )
 }
