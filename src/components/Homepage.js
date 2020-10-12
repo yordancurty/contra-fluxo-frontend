@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import photoChamada from "../photo-chamada.jpg";
 import photoCard from "../photo-card.jpg";
 import photoManifesto from "../photo-manifesto.jpg"
