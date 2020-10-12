@@ -239,4 +239,151 @@ background: #FFD600;
     
     /* --------- foooter --------- */
 
+/* ----------------------------------- media query --------------------------------- */
 
+@media (min-width: 900px) and (max-width: 1380px) { 
+    *{
+        max-width: 100%;
+    }
+    body{
+        margin:0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh; 
+        font-family: 'Roboto', sans-serif;
+    }
+   
+   /* --------- chamada/homepage --------- */
+
+    .photo-chamada {
+        width: 45rem;
+    }
+
+    .div-image-chamada{
+        position: relative;
+    }
+
+    .h1-chamada{
+        position: relative;
+        font-size: 62px;
+        font-weight: bold;
+        left: -98px;
+    }
+    .h1-over-image-chamada{
+        position: absolute;
+        top: -10px;
+        left: 3px;
+        font-size: 62px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+.lugar-certo{
+    position: absolute;
+    left: -230px;
+    bottom:-12px;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.para-artistas-independentes{
+    position: absolute;
+    bottom: -42px;
+    left: -193px;
+    font-size: 24px;
+}
+
+/* --------- destaque/homepage --------- */
+
+.homepage-destaques{
+    width: 100vw;
+    height: 65vh;
+    background-color: #ffd600;
+}
+
+.homepage-destaques-two{
+    /* padding-top: 3rem; */
+    width: 100vw;
+    height: 65vh;
+  }
+
+  .card{
+    width: 20rem;
+    height: 32.7rem;
+    border-color: black;
+    border-radius: 0;
+}
+
+.destaques-p-left{
+    font-size: 20px;
+    position: relative;
+    transform: rotate(-90deg);
+    width: max-content;
+    max-width: none;
+    font-weight: 600;
+    bottom: 135px;
+    left: -70px;
+}
+
+.destaques-p-right {
+    font-size: 20px;
+    position: relative;
+    transform: rotate(90deg);
+    width: max-content;
+    max-width: none;
+    font-weight: 600;
+    top: 140px;
+}
+
+.hr-destaques-left{
+    
+    transform: rotate(90deg);
+    position: relative;
+    bottom: -100px;
+    left: -120px;
+    max-width: none;
+    width: 300px;
+    border-top: 1px solid black;
+}
+
+.hr-destaques-right{
+
+    transform: rotate(90deg);
+    position: relative;
+    bottom: 90px;
+    right: 52px;
+    max-width: none;
+    width: 300px;
+    border-top: 1px solid black;
+}
+
+/* --------- destaque/homepage --------- */
+
+.homepage-manifest h1{
+    margin-top: 50px;
+    font-size: 60px;
+    margin-left: 5rem;
+
+}
+
+.photo-manifesto{
+    width: 35rem;
+}
+
+.p-manifesto{
+    margin-top: 100px;
+    line-height: 1.34em!important;
+    margin-right: 50px;    
+    width: 600px;
+    height: 630px;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: right;
+    
+    color: #000000;
+    }
+
+ }
