@@ -1,25 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../../src/logo.png';
+import api from '../../apis/index';
+import { useHistory } from "react-router-dom";
+import LoadingButton from "../../components/LoadingButton";
+import ErrorAlert from "../../components/ErrorAlert";
 
 function SignupForm(){
-    return (
+  
+  const history = useHistory();
+
+  const [state, setState] = useState({
+      name: "",
+      email: "",
+      password: "",
+      loading: false,
+      error: ""
+    });
+
+    const handleChange = (event) => {
+
+      setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.value
+      })
+    }
+
+    const handleSubmit = async (event) => {
+      setState({
+        ...state,
+        loading: true
+      })
+
+      try {
+
+        event.preventDefault();
+
+        const response = await api.post("http://localhost:4000/api/signup", state)
+        console.log(response) 
+        setState({...state, loading: false})
+        history.push("/")
+      } catch (err) {
+        setState({...state, loading: false, error: err.message})
+      }
+
+    }
+
+  return (
     <div className="form-container">
-    <form className="form-box-1">
+    <form onSubmit={handleSubmit} className="form-box-1">
     <h1>Bem-vindx a CONTRAFLUXO</h1>
           <div class="form-group">
-            <label for="formGroupExampleInput">Nome:</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" />
+            <label htmlFor="signupNameInput">Nome:</label>
+            <input type="name" class="form-control" id="signupNameInput" placeholder="Name" onChange={handleChange} value={state.name} />
           </div>
+
           <div class="form-group">
-                <label for="formGroupExampleInput">Email:</label>
-                <input type="password" class="form-control" id="formGroupExampleInput" placeholder="@" />
-             </div>
+                <label htmlFor="signupEmailInput">Email:</label>
+                <input type="email" class="form-control" id="signupEmailInput" placeholder="@" onChange={handleChange} value={state.email} />
+          </div>
+          
          <div class="form-group">
-            <label for="formGroupExampleInput">Senha:</label>
-            <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*****" />
+            <label htmlFor="signupPasswordInput">Senha:</label>
+            <input type="password" class="form-control" id="signupPasswordInput" placeholder="*****" onChange={handleChange} value={state.password} />
          </div>
-         <button type="submit" class="btn-form btn btn-primary">Criar conta</button>
-         <img className="logo-form" src={logo} alt="logo"/>
+
+         {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn btn-ligth">
+          Criar Conta
+         </button>)}
+         {state.error ? <ErrorAlert error={state.error} /> : null}
+      <img className="logo-form" src={logo} alt="logo"/>
     </form>
     </div>
     )
