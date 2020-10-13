@@ -76,23 +76,6 @@ function LoginForm() {
           />
         </div>
         <div class="form-group">
-<<<<<<< HEAD
-                <label  htmlFor="signupEmailInput">Email:</label>
-                <input name="email" type="password" class="form-control" id="signupEmailInput" placeholder="@" />
-             </div>
-             <div class="form-group">
-                <label htmlFor="signupPasswordInput">Senha:</label>
-                <input name="password" type="password" class="form-control" id="signupPasswordInput" placeholder="*****" />
-             </div>
-             <button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>
-             <div className="d-flex justify-content-end">
-             </div>
-             <p className="ciar-conta-login mt-3">
-            Não tem um conta? <Link to="/signup">Crie Agora!</Link>
-          </p>
-             <img className="logo-form-login" src={logo} alt="logo"/>
-        </form>
-=======
           <label htmlFor="loginPasswordInput">Senha:</label>
           <input
             name="password"
@@ -103,7 +86,6 @@ function LoginForm() {
             onChange={handleChange}
             value={state.password}
           />
->>>>>>> 029af667fcd5b8a439f6cbf931d8a2b57de7e55f
         </div>
         {state.loading ? (<LoadingButton />) : (<button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>)}
         <div className="d-flex justify-content-end"></div>
