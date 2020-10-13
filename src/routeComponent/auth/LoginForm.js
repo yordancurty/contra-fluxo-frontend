@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from '../../../src/logo.png';
-//import api from "";
+import { Link } from 'react-router-dom';
+//import api from "../../apis/index";
 //import { useHistory } from "react-router-dom";
+//import ErrorAlert from "../../components/ErrorAlert";
+//import LoadingButton from "../../components/LoadingButton";
 
 function LoginForm(){
 
@@ -41,6 +44,9 @@ localStorage.setItem(
 );
 
 setState({...state, loading: false})
+
+history.push("/profile");
+history.go();
  
    } catch (err) {
      setState({...state, loading: false, error: err.message})
@@ -69,6 +75,9 @@ setState({...state, loading: false})
              <button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>
              <div className="d-flex justify-content-end">
              </div>
+             <p className="mt-3">
+            Não tem um conta? <Link to="/signup">Crie Agora</Link>
+          </p>
              <img className="logo-form-login" src={logo} alt="logo"/>
         </form>
         </div>
@@ -79,4 +88,10 @@ export default LoginForm;
 
 //form - onSubmit={handleSubmit}
 
-//onChange={handleChange}
+//Email - onChange={handleChange} value={state.email}
+
+//Password - onChange={handleChande} value={state.password}
+
+//Button - {this.state.loading ? (<LoadingButton />) : (<button type="submit" className="btn btn-light">Entrar</button>)}
+
+//Error - {this.state.error ? <ErrorAlert error={this.state.error} /> : null}

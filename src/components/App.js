@@ -11,7 +11,7 @@ import LoginForm from "../routeComponent/auth/LoginForm";
 import SignupForm from "../routeComponent/auth/SignupForm";
 import Profile from "../routeComponent/profile/Profile";
 import ProfileEdit from "../routeComponent/profile/ProfileEdit";
-import ProfileDelete from "../routeComponent/profile/ProfileDelete";
+
 
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
         <Route exact path="/signup" component={SignupForm} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile-edit" component={ProfileEdit} />
-        <Route exact path="/profile-delete" component={ProfileDelete} />
         
 
       <Footer />

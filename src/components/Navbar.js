@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo.png"
-import SignupForm from '../routeComponent/auth/SignupForm';
-import Homepage from './Homepage';
 
 function Navbar(props) {
     return(
@@ -12,7 +10,7 @@ function Navbar(props) {
                <img className="logo ml-5" src={logo} alt="logo"/>    
                 <ul className="nav justify-content-end">
                     <li className="nav-item mr-4 ">
-                    <Link className="navbar-brand menu-item" to={Homepage}>Home</Link>
+                    <Link className="navbar-brand" to="/">Home</Link>
 
                     </li>
                     <li className="nav-item mr-4">
@@ -22,12 +20,11 @@ function Navbar(props) {
                     <Link className="navbar-brand menu-item" to="#">Artes</Link>
                     </li>
                     <li className="nav-item mr-4">
-                    <Link className="navbar-brand menu-item" to="#">Login</Link>
+                    <Link className="navbar-brand menu-item" to="/login">Login</Link>
                     </li>
                     <li className="nav-item mr-5">
                       <div className="navbar-link">  
-                        <Link className="navbar-brand ml-3" to={SignupForm}>Cadastre-se</Link>
-
+                        <Link className="navbar-brand ml-3" to="/signup">Cadastre-se</Link>
                         </div>
                     </li>
                 </ul>
@@ -36,4 +33,18 @@ function Navbar(props) {
     );
 }
 
-export default Navbar
+export default Navbar;
+
+
+/*CASO O USUÁRIO ESTEJA LOGADO - {props.user._id ? (
+    <div>
+      <span className="text-light">
+        {props.user ? `Welcome, ${props.user.name} :)` : ""}
+      </span>
+      <span className="mx-2 navbar-text">|</span>
+      <Link className="text-light" to="/logout">
+        Logout
+      </Link>
+    </div>
+  ) : null}
+</div> */

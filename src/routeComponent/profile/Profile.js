@@ -1,5 +1,7 @@
 import React from 'react';
 import photoProfile from '../../../src/photo-card.jpg'
+//import { Link } from 'react-router-dom';
+//import ConfirmationModal from '../../components/ConfirmationModal';
 
 function Profile() {
 return (
@@ -48,3 +50,10 @@ return (
 }
 
 export default Profile;
+
+/*  <ConfirmationModal
+          id="profileDeleteConfirmationModal"
+          show={state.showModal}
+          handleClose={handleModalToggle}
+          profileId={state.selectedRowId}
+        /> */
