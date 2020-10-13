@@ -9,4 +9,4 @@ function ErrorAlert(props) {
     );
 }
 
-export default ErrorAlert
+export default ErrorAlert;

@@ -83,7 +83,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div className="homepage-manifest ">
+      <div className="homepage-manifest">
         <h1>Manifesto</h1>
         <hr className="hr-manifesto" />
 
