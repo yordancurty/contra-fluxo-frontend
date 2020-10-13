@@ -45,10 +45,14 @@ function SignupForm() {
   //   }; 
 
   return (
-    <div className="form-container ">
+    <div className="form-container d-flex justify-content-center align-items-center ">
+      <div className="form-box-3">
+        </div>
+      <div className="form-box-2">
+      </div>
       <form className="form-box-1">
-      <h1>Bem-vindx a CONTRAFLUXO</h1>
-            <div className="form-group">
+      <h1>Bem-vindx a<br/> <span className="bold">CONTRAFLUXO</span></h1>
+            <div className="form-group"> 
               <label htmlFor="signupNameInput">Nome:</label>
               <input type="name" className="form-control" id="signupNameInput" placeholder="Name" />
             </div>
@@ -63,15 +67,17 @@ function SignupForm() {
               <input type="password" className="form-control" id="signupPasswordInput" placeholder="*****" />
           </div>
           <button type="submit" className="btn-form btn btn-ligth">
-            Criar Conta
+            Criar Conta!
           </button>
         {/*   {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn btn-ligth">
             Criar Conta
-          </button>)}
+            </button>)}
           {state.error ? <ErrorAlert error={state.error} /> : null}  */}
         <img className="logo-form" src={logo} alt="logo"/>
       </form>
-    </div>
+          
+      </div>
+    
     )
 }
 

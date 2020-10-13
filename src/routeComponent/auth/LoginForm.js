@@ -51,9 +51,13 @@ setState({...state, loading: false})
  */
 
     return (
-        <div className="form-container">
+        <div className="form-container d-flex justify-content-center align-items-center">
+            <div className="form-box-3">
+        </div>
+      <div className="form-box-2">
+      </div>
         <form className="form-box-1">
-        <h1>Bem-vindx de volta a CONTRAFLUXO</h1>
+        <h1>Bem-vindx de volta a<br/><span className='bold'> CONTRAFLUXO</span></h1>
         <div class="form-group">
                 <label for="formGroupExampleInput">Email:</label>
                 <input type="password" class="form-control" id="formGroupExampleInput" placeholder="@" />
@@ -62,10 +66,10 @@ setState({...state, loading: false})
                 <label for="formGroupExampleInput">Senha:</label>
                 <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*****" />
              </div>
-             <button type="submit" class="btn-form btn btn-light">Entrar</button>
+             <button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>
              <div className="d-flex justify-content-end">
-             <img className="logo-form" src={logo} alt="logo"/>
              </div>
+             <img className="logo-form-login" src={logo} alt="logo"/>
         </form>
         </div>
     )

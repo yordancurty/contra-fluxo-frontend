@@ -12,7 +12,7 @@ function Navbar(props) {
                <img className="logo ml-5" src={logo} alt="logo"/>    
                 <ul className="nav justify-content-end">
                     <li className="nav-item mr-4 ">
-                    <Link className="navbar-brand" to={Homepage}>Home</Link>
+                    <Link className="navbar-brand menu-item" to={Homepage}>Home</Link>
 
                     </li>
                     <li className="nav-item mr-4">

@@ -184,28 +184,218 @@ color: #000000;
 
 /* ------- Formulário LOGIN e SIGNUP -------- */
 
-.form-container{
+.logo-form-login{
+    width: 6rem;
+        position: relative;
+        left: 630px;
+        top: 33px;
+}
+
+.btn-form-login{
+    margin-top: 25px;
+}
+
+
+@media (min-width: 1380px) and (max-width: 1999px){
+    .form-container{
+        background-color: #ffd600;
+        background-size: cover;
+        width: 100vw;
+        height: 82.2vh;
+    }
+    .bold{
+        font-weight: 900;
+        
+    }
+    
+    
+    .form-box-1 h1{
+        font-weight: 300;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .form-box-1 label {
+        font-weight: 500;
+        margin-bottom: 0px;
+        margin-left: 40px;
+    }
+    
+    
+    .form-box-1 input {
+        border: 1px solid black;
+        border-radius: 0;
+        width: 300px;
+        height: 28px;
+        margin-left: 40px;
+    }
+    
+    .form-box-1 button {
+        width: 100px;
+        border-radius: 0;
+        position: relative;
+        left: 40px;
+        bottom: 25px;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .form-box-1 img{
+        
+    }
+    
+    .form-box-3{
+        width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+        position: absolute;
+        left: 625px;
+        top: 274px;
+        z-index: 0;
+    }
+    
+     .form-box-2{
+        width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+        position: absolute;
+         left: 605px;
+         top: 254px; 
+        z-index: 1;
+    } 
+    
+    .form-box-1{
+    width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+     /* left: -20px;
+    top: -20px; */
+    
+    }
+    
+    .logo-form{
+        width: 6rem;
+        position: relative;
+        left: 530px;
+        top: 15px;
+    }
+    
+    .btn-form{
+    width: 70px;
+    height: 25px;
+    color: black;
+    font-size: 0.8rem;
+    background: #FFD600;
+    
+    }
+}
+@media (min-width: 900px) and (max-width: 1380px) {
+    .logo-form-login{
+        width: 6rem;
+            position: relative;
+            left: 530px;
+            top: -15px;
+    }
+
+    .form-container{
     background-color: #ffd600;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    height: 78.5vh;
+}
+.bold{
+    font-weight: 900;
+    
 }
 
-.form-box-1{
-width: 500px;
-height: 351px;
+
+.form-box-1 h1{
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.form-box-1 label {
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+
+
+.form-box-1 input {
+    border: 1px solid black;
+    border-radius: 0;
+    width: 300px;
+    height: 28px;
+    margin-left: 40px;
+}
+
+.form-box-1 button {
+    width: 100px;
+    border-radius: 0;
+    position: relative;
+    left: 40px;
+    bottom: 25px;
+    text-align: center;
+    padding: 0;
+}
+
+.form-box-1 img{
+    
+}
+
+.form-box-3{
+    width: 650px;
+height: 450px;
 background: #FFFFFF;
-border: 1px solid #000000;
+border: 2px solid #000000;
 box-sizing: border-box;
-left: 437px;
-top: 227px;
+    position: absolute;
+    left: 378px;
+    top: 192px;
+    z-index: 1;
+}
+
+ .form-box-2{
+    width: 650px;
+height: 450px;
+background: #FFFFFF;
+border: 2px solid #000000;
+box-sizing: border-box;
+    position: absolute;
+     left: 398px;
+     top: 212px; 
+    z-index: 0;
+} 
+
+.form-box-1{
+width: 650px;
+height: 450px;
+background: #FFFFFF;
+border: 2px solid #000000;
+box-sizing: border-box;
 position: absolute;
+z-index: 2;
+ /* left: -20px;
+top: -20px; */
+
 }
 
 .logo-form{
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 0.5rem;
+    width: 5.5rem;
+    position: relative;
+    left: 435px;
+    top: -30px;
 }
 
 .btn-form{
@@ -216,6 +406,9 @@ font-size: 0.8rem;
 background: #FFD600;
 
 }
+}
+
+
 
 /* --------- foooter --------- */
 
@@ -396,4 +589,35 @@ background: #FFD600;
     width: 87vw;
     border-top: 1px solid black ;
 }
+ }
+
+
+
+ /* --------- profile --------- */
+
+ .div-mother-profile{
+     width: 100vw;
+     height: 80vh;
+ }
+
+ .photo-profile{
+     
+     width: 150px;
+     height: 150px;
+     border-radius: 40px;
+     margin-left: 50px;
+ }
+
+ .card-profile{
+     /* Rectangle 26 */
+
+
+width: 201px;
+height: 302px;
+
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+
  }
