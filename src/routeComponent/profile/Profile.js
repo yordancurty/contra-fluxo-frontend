@@ -66,3 +66,15 @@ export default Profile;
 //icon facebook - 
 
 //icon youtube - 
+
+//icon instagram - <i className="fab fa-instagram"></i>
+
+//icon twitter - <i className="fab fa-twitter-square"></i>
+
+//icon facebook - <i className="fab fa-facebook-square"></i>
+
+//icon youtube - <i className="fab fa-youtube-square"></i>
+
+//edit profile - <i className="far fa-edit"></i>
+
+//delete profile - <i className="far fa-trash-alt"></i> 
