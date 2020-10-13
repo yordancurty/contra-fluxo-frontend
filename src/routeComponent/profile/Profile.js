@@ -57,3 +57,12 @@ export default Profile;
           handleClose={handleModalToggle}
           profileId={state.selectedRowId}
         /> */
+
+
+//icon instagram - <i className="fab fa-instagram"></i>
+
+//icon twitter - 
+
+//icon facebook - 
+
+//icon youtube - 
