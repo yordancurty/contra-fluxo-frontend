@@ -75,8 +75,8 @@ function LoginForm(){
              <button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>
              <div className="d-flex justify-content-end">
              </div>
-             <p className="mt-3">
-            Não tem um conta? <Link to="/signup">Crie Agora</Link>
+             <p className="ciar-conta-login mt-3">
+            Não tem um conta? <Link to="/signup">Crie Agora!</Link>
           </p>
              <img className="logo-form-login" src={logo} alt="logo"/>
         </form>

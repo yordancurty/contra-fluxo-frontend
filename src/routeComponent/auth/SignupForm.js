@@ -66,7 +66,7 @@ const [state, setState] = useState({
               <label htmlFor="signupPasswordInput">Senha:</label>
               <input name="password" type="password" className="form-control" id="signupPasswordInput" placeholder="*****" onChange={handleChange} value={state.password}/>
           </div>
-        {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn btn-ligth">
+        {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn  btn-form-signup btn-ligth">
             Criar Conta
             </button>)}
           {state.error ? <ErrorAlert error={state.error} /> : null}
