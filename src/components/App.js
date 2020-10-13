@@ -7,6 +7,11 @@ import "../assets/styles/style.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Homepage from "./Homepage";
+import LoginForm from "../routeComponent/auth/LoginForm";
+import SignupForm from "../routeComponent/auth/SignupForm";
+import Profile from "../routeComponent/profile/Profile";
+import ProfileEdit from "../routeComponent/profile/ProfileEdit";
+
 
 
 function App() {
@@ -15,8 +20,13 @@ function App() {
     <BrowserRouter>
       <Navbar />
       
-        <Route exact path="/" component={Homepage}/>
-      
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile-edit" component={ProfileEdit} />
+        
+
       <Footer />
     </BrowserRouter>
   </div>

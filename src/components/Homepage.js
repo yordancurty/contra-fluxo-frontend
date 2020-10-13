@@ -83,7 +83,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div className="homepage-manifest ">
+      <div className="homepage-manifest">
         <h1>Manifesto</h1>
         <hr className="hr-manifesto" />
 
@@ -92,7 +92,7 @@ function Homepage() {
           <div className="p-manifesto ">
 
         <p>
-        Somos uma plataforma que não<br/> só valoriza os artistas<br/> independentes mas que também<br/> possibilita a divulgação e venda<br/> de suas artes.
+        Somos uma plataforma que não<br/> só valoriza os artistas<br/> independentes mas que também<br/> possibilita a divulgação e venda<br/> de suas artes.<br/>
 Se você é alguém que valoriza<br/> esse tipo de conteúdo, ou alguém<br/> que já teve coragem o suficiente<br/> para mostrar ao sistema que você<br/> consegue<br/> 
 criar e produzir algo fora dele, aqui<br/> é seu lugar! Junte-se a nós e faça<br/> parte desse movimento<br/> <span className='destaque-amarelo'>Contra Fluxo</span>        </p>
           </div>

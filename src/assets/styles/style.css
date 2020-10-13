@@ -182,8 +182,231 @@ color: #000000;
 
 
 
+/* ------- Formulário LOGIN e SIGNUP -------- */
+
+.logo-form-login{
+    width: 6rem;
+        position: relative;
+        left: 630px;
+        top: 33px;
+}
+
+.btn-form-login{
+    margin-top: 25px;
+}
 
 
+@media (min-width: 1380px) and (max-width: 1999px){
+    .form-container{
+        background-color: #ffd600;
+        background-size: cover;
+        width: 100vw;
+        height: 82.2vh;
+    }
+    .bold{
+        font-weight: 900;
+        
+    }
+    
+    
+    .form-box-1 h1{
+        font-weight: 300;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .form-box-1 label {
+        font-weight: 500;
+        margin-bottom: 0px;
+        margin-left: 40px;
+    }
+    
+    
+    .form-box-1 input {
+        border: 1px solid black;
+        border-radius: 0;
+        width: 300px;
+        height: 28px;
+        margin-left: 40px;
+    }
+    
+    .form-box-1 button {
+        width: 100px;
+        border-radius: 0;
+        position: relative;
+        left: 40px;
+        bottom: 25px;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .form-box-1 img{
+        
+    }
+    
+    .form-box-3{
+        width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+        position: absolute;
+        left: 625px;
+        top: 274px;
+        z-index: 0;
+    }
+    
+     .form-box-2{
+        width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+        position: absolute;
+         left: 605px;
+         top: 254px; 
+        z-index: 1;
+    } 
+    
+    .form-box-1{
+    width: 750px;
+    height: 500px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+     /* left: -20px;
+    top: -20px; */
+    
+    }
+    
+    .logo-form{
+        width: 6rem;
+        position: relative;
+        left: 530px;
+        top: 15px;
+    }
+    
+    .btn-form{
+    width: 70px;
+    height: 25px;
+    color: black;
+    font-size: 0.8rem;
+    background: #FFD600;
+    
+    }
+}
+@media (min-width: 900px) and (max-width: 1380px) {
+    .logo-form-login{
+        width: 6rem;
+            position: relative;
+            left: 530px;
+            top: -15px;
+    }
+
+    .form-container{
+    background-color: #ffd600;
+    background-size: cover;
+    width: 100vw;
+    height: 78.5vh;
+}
+.bold{
+    font-weight: 900;
+    
+}
+
+
+.form-box-1 h1{
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.form-box-1 label {
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+
+
+.form-box-1 input {
+    border: 1px solid black;
+    border-radius: 0;
+    width: 300px;
+    height: 28px;
+    margin-left: 40px;
+}
+
+.form-box-1 button {
+    width: 100px;
+    border-radius: 0;
+    position: relative;
+    left: 40px;
+    bottom: 25px;
+    text-align: center;
+    padding: 0;
+}
+
+.form-box-1 img{
+    
+}
+
+.form-box-3{
+    width: 650px;
+height: 450px;
+background: #FFFFFF;
+border: 2px solid #000000;
+box-sizing: border-box;
+    position: absolute;
+    left: 378px;
+    top: 192px;
+    z-index: 1;
+}
+
+ .form-box-2{
+    width: 650px;
+height: 450px;
+background: #FFFFFF;
+border: 2px solid #000000;
+box-sizing: border-box;
+    position: absolute;
+     left: 398px;
+     top: 212px; 
+    z-index: 0;
+} 
+
+.form-box-1{
+width: 650px;
+height: 450px;
+background: #FFFFFF;
+border: 2px solid #000000;
+box-sizing: border-box;
+position: absolute;
+z-index: 2;
+ /* left: -20px;
+top: -20px; */
+
+}
+
+.logo-form{
+    width: 5.5rem;
+    position: relative;
+    left: 435px;
+    top: -30px;
+}
+
+.btn-form{
+width: 70px;
+height: 25px;
+color: black;
+font-size: 0.8rem;
+background: #FFD600;
+
+}
+}
 
 
 
@@ -209,4 +432,205 @@ color: #000000;
     
     /* --------- foooter --------- */
 
-/*  */
+/* ----------------------------------- media query --------------------------------- */
+
+@media (min-width: 900px) and (max-width: 1380px) { 
+    *{
+        max-width: 100%;
+    }
+    body{
+        margin:0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh; 
+        font-family: 'Roboto', sans-serif;
+    }
+   
+   /* --------- chamada/homepage --------- */
+
+    .photo-chamada {
+        width: 40rem;
+    }
+
+    .div-image-chamada{
+        position: relative;
+    }
+
+    .h1-chamada{
+        position: relative;
+        font-size: 50px;
+        font-weight: bold;
+        left: -70px;
+        top: -3px;
+    }
+    .h1-over-image-chamada{
+        position: absolute;
+        top: -10px;
+        left: 3px;
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+.lugar-certo{
+    position: absolute;
+    left: -230px;
+    bottom:-12px;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.para-artistas-independentes{
+    position: absolute;
+    bottom: -42px;
+    left: -193px;
+    font-size: 24px;
+}
+
+/* --------- destaque/homepage --------- */
+
+.homepage-destaques{
+    width: 100vw;
+    height: 75vh;
+    background-color: #ffd600;
+}
+
+.homepage-destaques-two{
+    /* padding-top: 3rem; */
+    width: 100vw;
+    height: 75vh;
+  }
+
+  .card{
+    width: 18rem;
+    height: 26rem;
+    border-color: black;
+    border-radius: 0;
+}
+
+.card h5{
+    margin-top: -10px;
+}
+
+.card p{
+    font-size: 13px;
+}
+.destaques-p-left{
+    font-size: 20px;
+    position: relative;
+    transform: rotate(-90deg);
+    width: max-content;
+    max-width: none;
+    font-weight: 600;
+    bottom: 102px;
+    left: -70px;
+}
+
+.destaques-p-right {
+    font-size: 20px;
+    position: relative;
+    transform: rotate(90deg);
+    width: max-content;
+    max-width: none;
+    font-weight: 600;
+    top: 115px;
+    left: -24px;
+}
+
+.hr-destaques-left{
+    
+    transform: rotate(90deg);
+    position: relative;
+    bottom: -95px;
+    left: -85px;
+    max-width: none;
+    width: 230px;
+    border-top: 1px solid black;
+}
+
+.hr-destaques-right{
+
+    transform: rotate(90deg);
+    position: relative;
+    bottom: 80px;
+    right: 40px;
+    max-width: none;
+    width: 230px;
+    border-top: 1px solid black;
+}
+
+/* --------- manifesto/homepage --------- */
+
+.homepage-manifest {
+    height: 100vh;
+}
+
+.homepage-manifest h1{
+    margin-top: 50px;
+    font-size: 55px;
+    margin-left: 5rem;
+
+}
+
+.photo-manifesto{
+    margin-top: 50px;
+    width: 30rem;
+}
+
+.p-manifesto{
+    margin-top: 70px;
+    line-height: 1.34em!important;
+    margin-right: 50px;    
+    width: 390px;
+    height: 510px;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 26px;
+    line-height: 42px;
+    text-align: right;
+    
+    color: #000000;
+    }
+    .menu-item{
+        font-size: 17px;
+    }
+
+
+.hr-manifesto{
+    margin-top: -10px;
+    width: 87vw;
+    border-top: 1px solid black ;
+}
+ }
+
+
+
+ /* --------- profile --------- */
+
+ .div-mother-profile{
+     width: 100vw;
+     height: 80vh;
+ }
+
+ .photo-profile{
+     
+     width: 150px;
+     height: 150px;
+     border-radius: 40px;
+     margin-left: 50px;
+ }
+
+ .card-profile{
+     /* Rectangle 26 */
+
+
+width: 201px;
+height: 302px;
+
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+ }
