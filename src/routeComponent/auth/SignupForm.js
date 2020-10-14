@@ -157,24 +157,8 @@ function SignupForm() {
           <img className="logo-form" src={logo} alt="logo"/>
         </form>
             
-<<<<<<< HEAD
-          <div className="form-group">
-              <label htmlFor="signupPasswordInput">Senha:</label>
-              <input name="password" type="password" className="form-control" id="signupPasswordInput" placeholder="*****" onChange={handleChange} value={state.password}/>
-          </div>
-        {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn  btn-form-signup btn-ligth">
-            Criar Conta
-            </button>)}
-          {state.error ? <ErrorAlert error={state.error} /> : null}
-        <img className="logo-form" src={logo} alt="logo"/>
-      </form>
-          
-      </div>
-    
-=======
         </div>
       
->>>>>>> 029af667fcd5b8a439f6cbf931d8a2b57de7e55f
     )
 }
 
