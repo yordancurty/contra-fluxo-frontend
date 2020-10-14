@@ -1,18 +1,30 @@
 import React, {useEffect} from 'react';
-import history from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import api from "../../apis/index";
 
-function Logout(){
+function Logout(props) {
+     
+    const history = useHistory();
 
- useEffect(() => {
-  localStorage.removeItem("loggedInUser");
-  handleLogout();
-  history.push("/");
-  history.go();  
-});
+    useEffect(() => {
+        (async function sendLogout(){
+        try{
+        
+        await api.post("/logout");
+        localStorage.removeItem("loggedInUser");
+        props.setUser({});
+        history.push("/");
+
+        } catch(err){
+           console.error(err); 
+        }
+        })();
+    }, [props]);
+
 
     return (
         <div>Logging out...</div>
     )
-}
+};
 
 export default Logout;

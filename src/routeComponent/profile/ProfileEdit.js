@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import api from "../../apis/index";
 
 function ProfileEdit(props){
 
     const history = useHistory();
 
-    const { id } = props.match.params;
+    const { id } = useParams();
 
-    const [edit, setEdit] = useState({
+    const [profile, setProfile] = useState({
         name: "",
         email: "",
         aboutMe: "",
@@ -25,30 +25,30 @@ function ProfileEdit(props){
 
     useEffect(() => {
         setIsLoadingFetch(true);
-        (async function(){
+        (async function fetchUser() {
             try {
-
-              
-                const response = await api.get(`http://localhost:4000/api/profile/${id}`
-                );
+                const response = await api.get(`/profile/${id}`);
 
                 console.log(response);
+
                 setIsLoadingFetch(false);
-                setEdit({...response.data});
+
+                setProfile({...response.data});
+
             } catch(err){
                 setIsLoadingFetch(false);
-                setEdit({...edit, error: err.message});
+                setProfile({...profile, error: err.message});
             }
         })();
     }, [id]);
 
     const handleChange = (event) => {
         if (event.currentTarget.files){
-            return setEdit({
+            return setProfile({
                 [event.currentTarget.name]: event.currentTarget.files[0],
             });
         }
-       return setEdit({...edit,
+       return setProfile({...profile,
         [event.currentTarget.name]: event.currentTarget.value,
         });
     };
@@ -75,12 +75,11 @@ function ProfileEdit(props){
         try{
         event.preventDefault();
 
-        const response = await api.patch(`http://localhost:4000/api/profile/${id}`,
-        edit);
+        const response = await api.patch(`/profile/${id}`, profile);
 
-        const fileUrl = await handleFileUpload(edit.attachment);
+        const fileUrl = await handleFileUpload(profile.attachment);
 
-        setEdit({attachmentUrl:fileUrl});
+        setProfile({attachmentUrl:fileUrl});
 
         console.log(response);
 
@@ -91,7 +90,7 @@ function ProfileEdit(props){
         } catch(err){
         console.error(err)
         setIsLoadingSend(false);
-        setEdit({...edit, error: err.message});
+        setProfile({...profile, error: err.message});
         }
     }
 
@@ -101,26 +100,26 @@ function ProfileEdit(props){
     <legend>Edite seu perfil</legend>
     <div className="form-group">
       <label htmlFor="profileEditNameInput">Name:</label>
-      <input type="text" name="name" className="form-control" id="profileEditNameInput" placeholder="Insira seu nome" value={edit.name} onChange={handleChange} />
+      <input type="text" name="name" className="form-control" id="profileEditNameInput" placeholder="Insira seu nome" value={profile.name} onChange={handleChange} />
     </div>
     <div className="form-group">
       <label htmlFor="profileEditEmailInput">Email:</label>
-      <input type="email" name="email" className="form-control" id="profileEditEmailInput" aria-describedby="emailHelp" placeholder="Enter email" value={edit.email} onChange={handleChange} />
+      <input type="email" name="email" className="form-control" id="profileEditEmailInput" aria-describedby="emailHelp" placeholder="Enter email" value={profile.email} onChange={handleChange} />
       <small id="emailHelp" className="form-text text-muted">Nunca compartilhe seu email com alguém.</small>
     </div>
     <div className="form-group">
       <label htmlFor="profileEditAboutMeInput">Fale mais sobre você:</label>
-      <textarea className="form-control" name="aboutMe" type="text" id="profileEditAboutMeInput" rows="3" value={edit.aboutMe} onChange={handleChange}></textarea>
+      <textarea className="form-control" name="aboutMe" type="text" id="profileEditAboutMeInput" rows="3" value={profile.aboutMe} onChange={handleChange}></textarea>
     </div>
     <div className="form-group">
       <label htmlFor="profileEditFacebookInput">Inclua suas redes sociais aqui também:</label>
-      <input type="text" name="facebook" className="form-control" id="profileEditFacebookInput" placeholder="Insira o link do facebook" value={edit.facebook} onChange={handleChange} />
+      <input type="text" name="facebook" className="form-control" id="profileEditFacebookInput" placeholder="Insira o link do facebook" value={profile.facebook} onChange={handleChange} />
       <label htmlFor="profileInstagramInput"></label>
-      <input type="text" name="instagram" className="form-control" id="profileInstagramInput" placeholder="Insira o link do instagram" value={edit.instagram} onChange={handleChange} />
+      <input type="text" name="instagram" className="form-control" id="profileInstagramInput" placeholder="Insira o link do instagram" value={profile.instagram} onChange={handleChange} />
       <label htmlFor="profileTwitterInput"></label>
-      <input type="text" name="twitter" className="form-control" id="profileTwitterInput" placeholder="Insira o link do twitter" value={edit.twitter} onChange={handleChange} />
+      <input type="text" name="twitter" className="form-control" id="profileTwitterInput" placeholder="Insira o link do twitter" value={profile.twitter} onChange={handleChange} />
       <label htmlFor="profileEditYoutubeInput"></label>
-      <input type="text" name="youtube" className="form-control" id="profileEditYoutubeInput" placeholder="Insira o link do youtube" value={edit.youtube} onChange={handleChange} />
+      <input type="text" name="youtube" className="form-control" id="profileEditYoutubeInput" placeholder="Insira o link do youtube" value={profile.youtube} onChange={handleChange} />
     </div>
     <div className="form-group">
     <div className="input-group mb-3">
