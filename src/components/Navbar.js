@@ -7,10 +7,10 @@ function Navbar(props) {
         
         
             <nav className="navbar navbar-light bg-light pr-5 pl-5 ">
-               <img className="logo ml-5" src={logo} alt="logo"/>    
-                <ul className="nav justify-content-end">
-                    <li className="nav-item mr-4 ">
-                    <Link className="navbar-brand" to="/">Home</Link>
+              <Link to="/"><img className="logo ml-5" src={logo} alt="logo"/></Link>    
+               <ul className="nav justify-content-end">
+                    <li className="mr-4 nav-item ">
+                    <Link className="navbar-brand nav-item" to="/">Home</Link>
 
                     </li>
                     <li className="nav-item mr-4">
@@ -28,7 +28,7 @@ function Navbar(props) {
                         <Link className="navbar-brand ml-3" to="/signup">Cadastre-se</Link>
                         </div>
                     </li>
-                </ul>
+               </ul>
             </nav>
        
     );
