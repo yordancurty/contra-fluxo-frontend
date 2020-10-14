@@ -6,8 +6,9 @@ import { useHistory } from "react-router-dom";
 import ErrorAlert from "../../components/ErrorAlert";
 import LoadingButton from "../../components/LoadingButton";
 
-function LoginForm() {
+function LoginForm(props) {
   const history = useHistory();
+
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -32,10 +33,9 @@ function LoginForm() {
       event.preventDefault();
 
       const response = await api.post(
-        "http://localhost:4000/api/login",
-        state
-      );
-      console.log(response.data);
+        "/login", state);
+    
+      props.setUser({...response.data});  
 
       localStorage.setItem(
         "loggedInUser",
