@@ -14,13 +14,14 @@ function ProductCreate(){
      specifications: "",
      user: "",
      artType: ["Artes Literárias", "Audiovisual", "Artes Visuais", "Artesanato"],
+     subCategory: ["HQ", "Romance", "Poesia", "Biografia", "Fantasia", "Ficção", "Documentario", "Filmes", "Curtas", "Animação", "Pintura", "Escultura", "Desenho", "Macramê", "Crochet", "Tricot", "Cerâmica"],
      media: "",
  });
 
 async function handleSubmit(data){
     try{
 
-     const response = await api.post("", {...data});
+     const response = await api.post(`/product/${userId}`, {...data});
      
      history.push(`/profile/${userId}`)
 
@@ -35,9 +36,9 @@ return (
             <h1>Adicione aqui sua arte:</h1>
             <hr></hr>
             <ProductForm 
-            handleSubmit={handleSubmit}
-            setState={setState}
-            state={state}
+                handleSubmit={handleSubmit}
+                setState={setState}
+                state={state}
             />
         </div>
     );
