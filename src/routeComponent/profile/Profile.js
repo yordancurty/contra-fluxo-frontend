@@ -1,11 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import photoProfile from '../../../src/photo-card.jpg'
 import { Link } from 'react-router-dom';
+import api from "../../apis/index";
 //import ConfirmationModal from '../../components/ConfirmationModal';
 
 function Profile() {
 
+    //info do perfil editado
 
+    //info dos produtos criados por esse usuário
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        (async function fetchProducts() {
+            try {
+
+            const response = await api.get("/product");
+
+            setProduct({...response.data})
+
+            } catch(err) {
+                console.error(err);
+            }
+        })();
+    }, []);
+    
 
 return (
     <div className='div-mother-profile '>
@@ -14,7 +33,7 @@ return (
                 <h3>Profile</h3>
                 <hr/>
                 <Link to="/profile-edit"><i class="far fa-edit"></i></Link>
-            {/*     <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link> */}
+               {/*  <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link> */}
                 <img className='photo-profile' src={photoProfile}/>
             </div>
             <div className='col-2 card-profile'>
@@ -29,7 +48,15 @@ return (
             <div className='col-2 card-profile'>
                 coooool
             </div>
-            
+{/*             {product.map((products) => <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{product.title}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>)} */}
+
         </div>
         <div className='row'>
         <div className='col-4'>

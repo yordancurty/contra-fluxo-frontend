@@ -1,52 +1,84 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import api from "../../apis/index";
+import ProductForm from "./ProductForm";
 
 const ProductEdit = () => {
 
     const history = useHistory();
     const { id } = useParams();
 
-    const [product, setProduct] = useState({
+    const [state, setState] = useState({
         title: "",
         description: "",
         specifications: "",
         user: "",
-        artType: ["Artes Literárias", "Audiovisual", "Artes Visuais", "Artesanato"],
+        artType: "",
+        subCategory: "",
         media: "",
+        price: 0,
     });
 
     useEffect(() => {
-        (async function fetchProject() {
-        const result = await api.get(`product`);
+        if (state.mediaUrl) {
+            handleSubmit(state);
+        }
+    }, [state]);
 
-        setProduct({ ...result.data[0] });
+    useEffect(() => {
+        (async function fetchProduct() {
+        const result = await api.get(`/product/${id}`);
+
+        setState({ ...result.data[0] });
         })();
     }, []);
 
     async function handleSubmit(data) {
         try {
-        // Colocando uma string em branco como URL, pois os dados que queremos inserir via POST sao sempre o segundo parametro do metodo "post" do Axios
+        
         const result = await api.patch(`/product/${id}`, data);
 
-        // Redirecionar de volta para lista de Projetos
         history.push("/");
         } catch (err) {
         console.error(err);
         }
     }
 
+
+    async function handleFileUpload(data) {
+        try{
+            const uploadData = new FormData();
+    
+            uploadData.append("media", data);
+    
+            const response = await api.post("/media-upload", uploadData);
+    
+            console.log(response.data.media);
+        return response.data.media;
+    
+        } catch(err){
+            console.error(err);
+        }
+    }
+            
+
     return (
         <div>
-            <h1>Edit Project {product.title}</h1>
+            <h1>Edite aqui o seu Produto: </h1>
             <hr></hr>
             <ProductForm
                 handleSubmit={handleSubmit}
-                product={product}
-                setProduct={setProduct}
+                handleFileUpload={handleFileUpload}
+                state={state}
+                setState={setState}
             />
         </div>
     )
 }
 
 export default ProductEdit;
+
+
+
+
+
