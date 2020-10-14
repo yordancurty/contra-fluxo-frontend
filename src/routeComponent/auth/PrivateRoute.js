@@ -1,4 +1,4 @@
-/* import React from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 function PrivateRoute({ component: Component, user, ...rest }) {
@@ -21,4 +21,4 @@ function PrivateRoute({ component: Component, user, ...rest }) {
   );
 }
 
-export default PrivateRoute; */
+export default PrivateRoute;

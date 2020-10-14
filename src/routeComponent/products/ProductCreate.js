@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
+import { useParams, useHistory } from "react-router-dom";
 import api from "../../apis/index";
 import ProductForm from "./ProductForm";
 
 function ProductCreate(){
+
+ const { userId } = useParams();
+ const history = useHistory();
 
  const [state, setState] = useState({
      title: "",
@@ -13,35 +17,30 @@ function ProductCreate(){
      media: "",
  });
 
- const handleChange = (event) => {
-     setState({
-         ...state, [event.current.name]: event.currentTarget.value,
-     });
- };
+async function handleSubmit(data){
+    try{
 
- const handleSubmit = async (event) => {
-     setState({...state});
+     const response = await api.post("", {...data});
+     
+     history.push(`/profile/${userId}`)
 
-     try{
-
-        event.preventDefault();
-
-        const {userId} = props.match.params;
-
-        const response = await api.post(`http://localhost:4000/api/product/${userId}`, state);
-        
-        console.log(response);
-
-        history.push("/profile")
-
-     } catch(err){
-         setState({...state});
-     }
- }
-
-    return (
-        <div>Product Create</div>
-    )
+    }catch(err){
+        console.error(err);
+    }
 }
+    
+
+return (
+        <div>
+            <h1>Adicione aqui sua arte:</h1>
+            <hr></hr>
+            <ProductForm 
+            handleSubmit={handleSubmit}
+            setState={setState}
+            state={state}
+            />
+        </div>
+    );
+};
 
 export default ProductCreate;
