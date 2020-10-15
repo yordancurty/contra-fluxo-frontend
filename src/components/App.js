@@ -16,11 +16,16 @@ import Profile from "../routeComponent/profile/Profile";
 import ProfileEdit from "../routeComponent/profile/ProfileEdit";
 import ProfileDelete from "../routeComponent/profile/ProfileDelete";
 
+import Cart from "../components/cart/Cart";
+
+
+
  import ProductCreate from "../routeComponent/products/ProductCreate";
  import ProductEdit from "../routeComponent/products/ProductEdit";
  import ProductDetail from "../routeComponent/products/ProductDetail";
  import ProductFeed from "../routeComponent/products/ProductFeed";
  import ProductDelete from "../routeComponent/products/ProductDelete";
+
 
 
 
@@ -47,6 +52,7 @@ const handleLogout = () => {
   return (
     <div>
     <BrowserRouter>
+
       <Navbar user={loggedInUser} />
       {loggedInUser._id ? (
             <Switch>
@@ -115,6 +121,7 @@ const handleLogout = () => {
               </Route>
             </Switch>
           )}
+
       <Footer />
     </BrowserRouter>
   </div>

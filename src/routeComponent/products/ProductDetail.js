@@ -34,6 +34,7 @@ function ProductDetail(){
 
     return (
         <div>
+
             <h1>Product Detail</h1>
             <hr></hr>
 
@@ -46,6 +47,7 @@ function ProductDetail(){
             <Link to={`/projects/${product.project}`}>Back to project</Link>
         </div>
     );
+
 }
 
 export default ProductDetail;
