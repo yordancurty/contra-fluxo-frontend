@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import photoProfile from '../../../src/photo-card.jpg'
 import { Link } from 'react-router-dom';
-import api from "../../apis/index";
-//import ConfirmationModal from '../../components/ConfirmationModal';
+//import api from "../../apis/index";
+
 
 function Profile() {
 
     //info do perfil editado
 
     //info dos produtos criados por esse usuário
-    const [product, setProduct] = useState({});
+/*     const [product, setProduct] = useState({});
 
     useEffect(() => {
         (async function fetchProducts() {
@@ -23,7 +23,7 @@ function Profile() {
                 console.error(err);
             }
         })();
-    }, []);
+    }, []); */
     
 
 return (
@@ -33,7 +33,7 @@ return (
                 <h3>Profile</h3>
                 <hr/>
                 <Link to="/profile-edit"><i class="far fa-edit"></i></Link>
-               {/*  <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link> */}
+               {/* <Link to={`profile/>delete/${}`}><i className="far fa-trash-alt"></i></ Link> */}
                 <img className='photo-profile' src={photoProfile}/>
             </div>
             <div className='col-2 card-profile'>
@@ -82,13 +82,6 @@ return (
 
 export default Profile;
 
-/*  <ConfirmationModal
-          id="profileDeleteConfirmationModal"
-          show={state.showModal}
-          handleClose={handleModalToggle}
-          profileId={state.selectedRowId}
-        /> */
-
 
 //icon instagram - <a to=""><i className="fab fa-instagram"></i></a>
 
@@ -101,12 +94,6 @@ export default Profile;
 //delete profile - <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link>
 
 
-/* const handleModalToggle = (userId) => {
-    setState((prevState) => ({
-        showModal: !prevState.showModal,
-        selectedRowId: userId,
-    }));
-}; */
 
 
 

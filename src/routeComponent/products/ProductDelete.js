@@ -1,8 +1,7 @@
-
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-import projectsApi from "../../apis/index"; //conferirPath********
+import api from "../../apis/index";
 
 const DeleteProject = () => {
     const { id } = useParams();
@@ -10,9 +9,9 @@ const DeleteProject = () => {
   
     async function handleClick() {
       try {
-        const result = await projectsApi.delete(`/${id}`);
+        const result = await api.delete(`/${id}`);
   
-        history.push("/");
+        history.push("/profile");
       } catch (err) {
         console.error(err);
       }

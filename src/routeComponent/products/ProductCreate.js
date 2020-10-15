@@ -59,8 +59,8 @@ async function handleFileUpload(data) {
 
 return (
         <div>
-            <h1>Adicione aqui sua arte:</h1>
-            <hr></hr>
+            <h1 className="h1-product-form">Adicione aqui sua arte:</h1>
+            <hr className="hr-product-form"></hr>
             <ProductForm 
                 handleSubmit={handleSubmit}
                 handleFileUpload={handleFileUpload}
