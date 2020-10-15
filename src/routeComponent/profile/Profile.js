@@ -1,20 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import photoProfile from '../../../src/photo-card.jpg'
 import { Link } from 'react-router-dom';
-//import ConfirmationModal from '../../components/ConfirmationModal';
+import api from "../../apis/index";
+
 
 function Profile() {
 
+   //info do perfil editado
+   const [state, setState] = useState({})
+    //info dos produtos criados por esse usuário
+   const [product, setProduct] = useState({});
 
+    useEffect(() => {
+        (async function fetchUser() {
+            try {
+
+            const response = await api.get("/profile");
+
+            const ProductResponse = await api.get("/product");
+
+            setState({...response.data.user})
+
+            setProduct({...ProductResponse.data})
+
+            } catch(err) {
+                console.error(err);
+            }
+        })();
+    }, []); 
+    
 
 return (
     <div className='div-mother-profile '>
         <div className='row'>
         <div className='col-4'>
-                <h3>Profile</h3>
+<h3>Profile {state.name}</h3>
                 <hr/>
                 <Link to="/profile-edit"><i class="far fa-edit"></i></Link>
-            {/*     <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link> */}
+               {/* <Link to={`profile/>delete/${}`}><i className="far fa-trash-alt"></i></ Link> */}
                 <img className='photo-profile' src={photoProfile}/>
             </div>
             <div className='col-2 card-profile'>
@@ -29,7 +52,15 @@ return (
             <div className='col-2 card-profile'>
                 coooool
             </div>
-            
+{/*             {product.map((products) => <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{product.title}</h5>
+    <p class="card-text">{product.description}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>)} */}
+
         </div>
         <div className='row'>
         <div className='col-4'>
@@ -55,13 +86,6 @@ return (
 
 export default Profile;
 
-/*  <ConfirmationModal
-          id="profileDeleteConfirmationModal"
-          show={state.showModal}
-          handleClose={handleModalToggle}
-          profileId={state.selectedRowId}
-        /> */
-
 
 //icon instagram - <a to=""><i className="fab fa-instagram"></i></a>
 
@@ -74,12 +98,6 @@ export default Profile;
 //delete profile - <Link to={{pathname: `/profile/delete/${user._id}`}}><i className="far fa-trash-alt"></i></ Link>
 
 
-/* const handleModalToggle = (userId) => {
-    setState((prevState) => ({
-        showModal: !prevState.showModal,
-        selectedRowId: userId,
-    }));
-}; */
 
 
 

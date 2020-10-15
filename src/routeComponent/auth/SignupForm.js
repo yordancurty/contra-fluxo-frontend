@@ -34,7 +34,7 @@ function SignupForm() {
 
         event.preventDefault();
       
-        const response = await api.post("http://localhost:4000/api/signup", state)
+        const response = await api.post("/signup", state)
         console.log(response) 
         setState({...state, loading: false})
           history.push("/profile") 
@@ -79,3 +79,4 @@ function SignupForm() {
 }
 
 export default SignupForm;
+

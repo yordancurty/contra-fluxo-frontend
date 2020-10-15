@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from "react-router-dom";
 import api from "../../apis/index";
 import ProductForm from "./ProductForm";
 
 function ProductCreate(){
 
- const { userId } = useParams();
+const { userId } = useParams();
  const history = useHistory();
 
  const [state, setState] = useState({
@@ -13,18 +13,45 @@ function ProductCreate(){
      description: "",
      specifications: "",
      user: "",
-     artType: ["Artes Literárias", "Audiovisual", "Artes Visuais", "Artesanato"],
+     artType: "default",
+     subCategory: "default",
      media: "",
+     price: 0,
  });
 
+ useEffect(() => {
+     if (state.mediaUrl) {
+         handleSubmit(state);
+     }
+ }, [state]);
+
 async function handleSubmit(data){
+
     try{
 
-     const response = await api.post("", {...data});
+     const response = await api.post(`/product/${userId}`, {...data});
+
+     console.log(response)
      
-     history.push(`/profile/${userId}`)
+     history.push(`/profile`)
 
     }catch(err){
+        console.error(err);
+    }
+}
+
+async function handleFileUpload(data) {
+    try{
+        const uploadData = new FormData();
+
+        uploadData.append("media", data);
+
+        const response = await api.post("/media-upload", uploadData);
+
+        console.log(response.data.media);
+    return response.data.media;
+
+    } catch(err){
         console.error(err);
     }
 }
@@ -32,12 +59,13 @@ async function handleSubmit(data){
 
 return (
         <div>
-            <h1>Adicione aqui sua arte:</h1>
-            <hr></hr>
+            <h1 className="h1-product-form">Adicione aqui sua arte:</h1>
+            <hr className="hr-product-form"></hr>
             <ProductForm 
-            handleSubmit={handleSubmit}
-            setState={setState}
-            state={state}
+                handleSubmit={handleSubmit}
+                handleFileUpload={handleFileUpload}
+                setState={setState}
+                state={state}
             />
         </div>
     );
