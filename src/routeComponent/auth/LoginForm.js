@@ -23,7 +23,8 @@ function LoginForm(props) {
     });
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => 
+  {
     setState({
       ...state,
       loading: true,

@@ -232,6 +232,9 @@ color: #000000;
 
 
 @media (min-width: 1380px) and (max-width: 1999px){
+    
+
+    
     .form-container{
         background-color: #ffd600;
         background-size: cover;
@@ -334,6 +337,139 @@ color: #000000;
     }
 }
 @media (min-width: 900px) and (max-width: 1380px) {
+
+    /* ----------------- cart ---------------------*/
+    
+    button[className*=btn] {
+        width: 30px;
+        height: 30px;
+        background-color: #E1E8EE;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+      }
+      .minus-btn img {
+        margin-bottom: 3px;
+      }
+      .plus-btn img {
+        margin-top: 2px;
+      }
+
+    .quantity {
+        padding-top: 20px;
+        margin-right: 60px;
+      }
+      .quantity input {
+        -webkit-appearance: none;
+        border: none;
+        text-align: center;
+        width: 32px;
+        font-size: 16px;
+        color: #43484D;
+        font-weight: 300;
+      }
+
+    .product-cart-photo{
+        width: 60px;
+        height: 60px;
+    }
+    .div-mother-cart{
+        height: 79vh;
+    }
+    .box-cart{
+        border: 1px solid black;
+        width: 70vw;
+        height: 70vh;
+    }
+
+    /* ----------------- profile ---------------------*/
+    .card-img-top{
+        margin-top: -10px;
+    }
+    .profile-title{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+        font-weight: lighter;
+        border-bottom: 1px solid black;
+        width: 290px;
+    }
+    .profile-description{
+        font-size: 13.5px;
+        width: 270px;
+        margin-top: 15px;
+        margin-bottom: 60px;
+    }
+    .edit-icon-profile{
+        position: absolute;
+        left: 245px;
+        color: black;
+    }
+    
+    .delete-icon-profile{
+        position: absolute;
+        left: 270px;
+        color: black;
+    }
+
+    .delete-icon-profile-card{
+        position: absolute;
+        left: 181px;
+        top: 278px;
+        color:black;
+    }
+
+    .edit-icon-profile-card{
+        position: absolute;
+        left: 158px;
+        top: 278px;
+        color:black;
+    }
+    .social-media-icons-profile{
+        width: 45px;
+        color: black;
+        
+    }
+    .div-mother-profile{
+        width: 100vw;
+        height: 80vh;
+    }
+ 
+    .photo-profile{
+        margin-bottom: 20px!important;
+        width: 140px!important;
+        height: 140px!important;
+        border-radius: 40px;
+        margin-left: 0px!important;
+    }
+   
+.profile{
+    background-color: rgb(246, 246, 246);
+
+}
+.card-title-profile{
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.user-name-profile{
+    font-weight: lighter;
+    
+}
+    .card-text-profile{
+        font-size: 10px!important;
+    }
+
+    .card-profile{
+       
+   width: 200px;
+   height: 300px!important;
+   margin: 20px;
+   
+   background: #FFFFFF;
+   border: 1px solid #000000;
+   box-sizing: border-box;
+   
+    }
    
     /* ----------------- login/signin ----------------- */
    .logo{
@@ -497,6 +633,9 @@ background: #FFD600;
         font-family: 'Roboto', sans-serif;
     }
    
+
+
+
    /* --------- chamada/homepage --------- */
 
     .photo-chamada {
@@ -656,7 +795,15 @@ background: #FFD600;
 
 
  /* --------- profile --------- */
+.profile{
+    width: 25vw;
+    height: 79.9vh;
+}
+.products-profile{
 
+    width: 75vw;
+    height: 79.9vh
+}
  .div-mother-profile{
      width: 100vw;
      height: 80vh;

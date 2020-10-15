@@ -2,7 +2,15 @@ import React from 'react';
 
 function ProductDetail(){
     return (
-        <div>Product Detail</div>
+        <div>
+
+        <div>
+            produc photo
+        </div>
+        <div>
+            product description
+        </div>
+        </div>
     )
 }
 

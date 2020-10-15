@@ -15,7 +15,8 @@ import SignupForm from "../routeComponent/auth/SignupForm";
 import Profile from "../routeComponent/profile/Profile";
 import ProfileEdit from "../routeComponent/profile/ProfileEdit";
 import ProfileDelete from "../routeComponent/profile/ProfileDelete";
-
+import Cart from "../components/cart/Cart";
+import ProductDetail from "../routeComponent/products/ProductDetail"
 // import ProductCreate from "../routeComponent/products/ProductCreate";
 // import ProductEdit from "../routeComponent/products/ProductEdit";
 // import ProductDetail from "../routeComponent/products/ProductDetail";
@@ -54,8 +55,8 @@ const handleLogout = () => {
         <Route exact path="/signup" component={SignupForm} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile-edit" component={ProfileEdit} />
-        
-
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/product-detail" component={ProductDetail} />
       <Footer />
     </BrowserRouter>
   </div>
