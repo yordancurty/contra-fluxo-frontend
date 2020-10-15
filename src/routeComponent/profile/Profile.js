@@ -1,36 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import photoProfile from '../../../src/photo-card.jpg'
 import { Link } from 'react-router-dom';
-//import api from "../../apis/index";
+import api from "../../apis/index";
 
 
 function Profile() {
 
-    //info do perfil editado
-
+   //info do perfil editado
+   const [state, setState] = useState({})
     //info dos produtos criados por esse usuário
-/*     const [product, setProduct] = useState({});
+   const [product, setProduct] = useState({});
 
     useEffect(() => {
-        (async function fetchProducts() {
+        (async function fetchUser() {
             try {
 
-            const response = await api.get("/product");
+            const response = await api.get("/profile");
 
-            setProduct({...response.data})
+            const ProductResponse = await api.get("/product");
+
+            setState({...response.data.user})
+
+            setProduct({...ProductResponse.data})
 
             } catch(err) {
                 console.error(err);
             }
         })();
-    }, []); */
+    }, []); 
     
 
 return (
     <div className='div-mother-profile '>
         <div className='row'>
         <div className='col-4'>
-                <h3>Profile</h3>
+<h3>Profile {state.name}</h3>
                 <hr/>
                 <Link to="/profile-edit"><i class="far fa-edit"></i></Link>
                {/* <Link to={`profile/>delete/${}`}><i className="far fa-trash-alt"></i></ Link> */}
@@ -52,7 +56,7 @@ return (
   <img src="..." class="card-img-top" alt="..." />
   <div class="card-body">
     <h5 class="card-title">{product.title}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{product.description}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>)} */}
