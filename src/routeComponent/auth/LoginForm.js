@@ -34,8 +34,7 @@ function LoginForm(props) {
 
       const response = await api.post(
         "/login", state);
-    
-      props.setUser({...response.data});  
+          
 
       localStorage.setItem(
         "loggedInUser",
@@ -45,10 +44,9 @@ function LoginForm(props) {
         })
       );
 
-      setState({ ...state, loading: false });
+      props.setState({ ...state, loading: false });
 
       history.push("/profile");
-      history.go();
     } catch (err) {
       setState({ ...state, loading: false, error: err.message });
     }

@@ -683,3 +683,56 @@ border: 1px solid #000000;
 box-sizing: border-box;
 
  }
+
+ /* --------- Formulário de edit e create do produto --------- */
+
+ .product-form-box{
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .product-form-container{
+width: 50rem;
+padding: 2rem 5rem 2rem 5rem;
+display: flex;
+justify-content: center;
+}
+
+.form-product-main{
+
+}
+ 
+ .form-product{
+ width: 35rem; 
+
+ }
+
+ .select-form-product{
+     width: 34.5rem;
+ }
+
+ .btn-form-product{
+background-color:  #ffd600;
+color: black;
+border: none;
+border-radius: 0%;
+ }
+
+ .h1-product-form{
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    font-size: 2rem;
+    background-color:  #ffd600;
+    width: 334px;
+    text-align: center;
+    
+ }
+
+ .hr-product-form{
+    margin: -0.2rem 2rem 0 2rem;
+    border-top: 1px solid black ;
+ }
+
+ .form-control {
+    border-radius: 0%;
+ }

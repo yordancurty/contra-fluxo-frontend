@@ -5,7 +5,7 @@ import ProductForm from "./ProductForm";
 
 function ProductCreate(){
 
-/*  const { userId } = useParams(); */
+const { userId } = useParams();
  const history = useHistory();
 
  const [state, setState] = useState({
@@ -29,7 +29,7 @@ async function handleSubmit(data){
 
     try{
 
-     const response = await api.post(`/product/5f85a96d89bec2111bdf35ce`, {...data});
+     const response = await api.post(`/product/${userId}`, {...data});
 
      console.log(response)
      
@@ -59,8 +59,8 @@ async function handleFileUpload(data) {
 
 return (
         <div>
-            <h1>Adicione aqui sua arte:</h1>
-            <hr></hr>
+            <h1 className="h1-product-form">Adicione aqui sua arte:</h1>
+            <hr className="hr-product-form"></hr>
             <ProductForm 
                 handleSubmit={handleSubmit}
                 handleFileUpload={handleFileUpload}
