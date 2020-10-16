@@ -45,6 +45,8 @@ const [profile, setProfile] = useState({
   youtube: "",
 });
 
+const [products, setProducts] = useState([]);
+
 useEffect(() => {
   console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
@@ -70,6 +72,8 @@ const handleLogout = () => {
             user={loggedInUser}
             profileState={profile}
             setProfile={setProfile}
+            productsState={products}
+            setProducts={setProducts}
           />    
       <PrivateRoute
             path="/profile/edit"
@@ -93,11 +97,13 @@ const handleLogout = () => {
             user={loggedInUser}
           />  
       <PrivateRoute
+            exact
             path="/product/edit/:id"
             component={ProductEdit}
             user={loggedInUser}
           />
       <PrivateRoute
+            exact
             path="/product/delete/:id"
             component={ProductDelete}
             user={loggedInUser}
@@ -147,6 +153,7 @@ const handleLogout = () => {
                 }} />
               <Route exact path="/product/:id"  component={ProductDetail} /> 
               <Route exact path="/signup" component={SignupForm} />
+              <Route exact path="/cart"  component={Cart} />
               <Route>
                 <Redirect to="/login" />
               </Route>

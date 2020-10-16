@@ -60,10 +60,7 @@ function ProductFeed(props){
             <div className="">
             {products.map((product) => <div className="card card-profile">
             <img
-              className="card-img-top"
-              src={product.mediaUrl}
-              alt="Card image cap"
-/>
+              className="card-img-top" src={product.mediaUrl} alt="Card image cap"/>
             <div className="card-body">
     <h5 className="card-title card-title-profile">{product.title}</h5>
               <p className="card-text card-text-profile">

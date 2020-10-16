@@ -29,7 +29,7 @@ function ProductDetail(){
         } catch (err) {
             console.error(err);
         }
-        })();
+        })();   
     }, []);
 
     return (

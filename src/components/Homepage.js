@@ -17,7 +17,7 @@ function Homepage() {
 
                  
             </div>
-           {/* <div class="col-8 div-image-chamada pl-0"></div> */}
+           {/* <div className="col-8 div-image-chamada pl-0"></div> */}
             <div className="col-10 div-image-chamada pl-0">
                 <img className="photo-chamada" src={photoChamada} alt="mulher deitada no chão pintando"/>
                 <div className="h1-over-image-chamada"> FLUXO </div>
