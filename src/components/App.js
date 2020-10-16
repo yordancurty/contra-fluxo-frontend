@@ -107,9 +107,9 @@ const handleLogout = () => {
               <Route exact path="/product/:id"  component={ProductDetail} /> 
               {/* <Route exact path="/cart" component={Cart} /> */}
 
-              {/* <Route>
+              <Route>
                 <Redirect to="/profile" />
-              </Route> */}
+              </Route>
             </Switch>
           ) : (
             <Switch>
