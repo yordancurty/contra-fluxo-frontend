@@ -120,7 +120,7 @@ function ProductForm(props) {
                 id="productPriceInput"
                 value={props.state.price}
                 onChange={handleChange}
-                placeholder="0,00"
+                placeholder="00"
               />
               <div className="input-group-append">
                 <span className="input-group-text">.00</span>

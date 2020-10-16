@@ -1,5 +1,6 @@
 *{
     max-width: 100%;
+    max-height: 100%;
 }
 body{
     margin:0;
@@ -409,7 +410,7 @@ color: #000000;
     .delete-icon-profile{
         position: absolute;
         left: 270px;
-        color: black;
+        color: black ;
     }
 
     .delete-icon-profile-card{
@@ -445,6 +446,7 @@ color: #000000;
    
 .profile{
     background-color: rgb(246, 246, 246);
+ 
 
 }
 .card-title-profile{
@@ -470,6 +472,29 @@ color: #000000;
    box-sizing: border-box;
    
     }
+
+.products-profile{
+    border: 1px solid blue;
+    height: 21.5rem !important;
+    width: 15rem !important;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-products-cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    border: 1px solid red;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+.icons-edit-delete-profile{
+    margin-left: 8rem;
+}
+
    
     /* ----------------- login/signin ----------------- */
    .logo{
@@ -905,6 +930,3 @@ border-radius: 0%;
     text-align: center;
 }
 
-.link-logout{
-  
-}
