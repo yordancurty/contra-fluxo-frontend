@@ -36,7 +36,8 @@ function LoginForm(props) {
       const response = await api.post(
         "/login", state);
           
-
+      props.setLoggedInUser({...response.data.user})
+        
       localStorage.setItem(
         "loggedInUser",
         JSON.stringify({
@@ -45,9 +46,8 @@ function LoginForm(props) {
         })
       );
 
-      props.setState({ ...state, loading: false });
+      setState({ ...state, loading: false });
 
-      history.push("/profile");
     } catch (err) {
       setState({ ...state, loading: false, error: err.message });
     }
@@ -88,7 +88,7 @@ function LoginForm(props) {
         </div>
         {state.loading ? (<LoadingButton />) : (<button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>)}
         <div className="d-flex justify-content-end"></div>
-        <p className="mt-3">
+        <p className="mt-5">
           Não tem um conta? <Link to="/signup">Crie Agora</Link>
         </p>
         {state.error ? <ErrorAlert error={state.error} /> : null}

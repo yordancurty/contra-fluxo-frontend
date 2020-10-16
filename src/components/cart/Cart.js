@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import photoCard from "../../../src/photo-card.jpg";
 import minus from "../../../src/minus.svg";
 import plus from "../../../src/plus.svg";
-//import ConfirmationModal from '../../components/ConfirmationModal';
+
 
 function Cart() {
+
+
+  
   return (
     <div className="div-mother-cart d-flex justify-content-center align-items-center">
       <div className="box-cart d-flex flex-column ">

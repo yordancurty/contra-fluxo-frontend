@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import api from "../../apis/index";
 import LoadingSpinner from "../../components/LoadingSpinner";
 
-const ProfileDelete = () => {
+const ProfileDelete = (props) => {
     const { id } = useParams();
     const history = useHistory();
 
@@ -11,6 +11,8 @@ const ProfileDelete = () => {
         try{
         
             const response = await api.delete(`/profile/${id}`);
+            localStorage.removeItem("loggedInUser");
+            props.setUser({});
 
             console.log(response);
             
@@ -70,7 +72,7 @@ const ProfileDelete = () => {
         </div>
       </div>
     </div>
- <LoadingSpinner />
+{/*  <LoadingSpinner /> */}
         </div>
     )
 };

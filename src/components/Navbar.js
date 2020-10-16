@@ -22,7 +22,7 @@ function Navbar(props) {
                     <li className="nav-item mr-4">
                     <Link className="navbar-brand menu-item" to="/login">Login</Link>
                     </li>
-                    {/* {props.user._id ? (<div><Link className="text-light" to="/logout">Logout</Link></div>) : null} */}
+                    {props.user._id ? (<div><Link className="link-logout text-light" to="/logout">Logout</Link></div>) : null}
                     <li className="nav-item mr-5">
                       <div className="navbar-link">  
                         <Link className="navbar-brand ml-3" to="/signup">Cadastre-se</Link>
@@ -35,17 +35,3 @@ function Navbar(props) {
 }
 
 export default Navbar;
-
-
-/*CASO O USUÁRIO ESTEJA LOGADO - {props.user._id ? (
-    <div>
-      <span className="text-light">
-        {props.user ? `Welcome, ${props.user.name} :)` : ""}
-      </span>
-      <span className="mx-2 navbar-text">|</span>
-      <Link className="text-light" to="/logout">
-        Logout
-      </Link>
-    </div>
-  ) : null}
-</div> */
