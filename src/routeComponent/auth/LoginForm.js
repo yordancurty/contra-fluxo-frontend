@@ -62,7 +62,7 @@ function LoginForm(props) {
           Bem-vindx de volta a<br />
           <span className="bold"> CONTRAFLUXO</span>
         </h1>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="loginEmailInput">Email:</label>
           <input
             name="email"
@@ -74,7 +74,7 @@ function LoginForm(props) {
             value={state.email}
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="loginPasswordInput">Senha:</label>
           <input
             name="password"
@@ -86,7 +86,7 @@ function LoginForm(props) {
             value={state.password}
           />
         </div>
-        {state.loading ? (<LoadingButton />) : (<button type="submit" class="btn-form btn btn-light btn-form-login">Entrar</button>)}
+        {state.loading ? (<LoadingButton />) : (<button type="submit" className="btn-form btn btn-light btn-form-login">Entrar</button>)}
         <div className="d-flex justify-content-end"></div>
         <p className="mt-3">
           Não tem um conta? <Link to="/signup">Crie Agora</Link>

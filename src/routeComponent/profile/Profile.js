@@ -36,7 +36,7 @@ return (
         <div className='col-4'>
 <h3>Profile {state.name}</h3>
                 <hr/>
-                <Link to="/profile-edit"><i class="far fa-edit"></i></Link>
+                <Link to="/profile-edit"><i className="far fa-edit"></i></Link>
                {/* <Link to={`profile/>delete/${}`}><i className="far fa-trash-alt"></i></ Link> */}
                 <img className='photo-profile' src={photoProfile}/>
             </div>
@@ -52,12 +52,12 @@ return (
             <div className='col-2 card-profile'>
                 coooool
             </div>
-{/*             {product.map((products) => <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{product.title}</h5>
-    <p class="card-text">{product.description}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+{/*             {product.map((products) => <div className="card" style="width: 18rem;">
+  <img src="..." className="card-img-top" alt="..." />
+  <div className="card-body">
+    <h5 className="card-title">{product.title}</h5>
+    <p className="card-text">{product.description}</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>
 </div>)} */}
 
