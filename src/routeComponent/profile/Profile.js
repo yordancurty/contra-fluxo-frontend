@@ -35,14 +35,18 @@ function Profile(props) {
       <div className="d-flex">
         <div className="profile d-flex flex-column align-items-center ">
           <h3 className="align-self-start profile-title">Perfil</h3>
-          <hr />
+          <hr></hr>
           <div className="icons-edit-delete-profile">
+            <div className="icon-edit-profile">
           <Link to="/profile/edit" >
-          <i className="far fa-edit"></i>
+          <i className="icon-edit-profile far fa-edit"></i>
           </Link>
+          </div>
+          <div className="icon-delete-profile">
           <Link to={`profile/delete/${props.loggedInUser._id}`} type="button">
-            <i className="far fa-trash-alt"></i>
+            <i className="icon-trash-profile far fa-trash-alt"></i>
           </Link>
+          </div>
           </div>
           <img className="photo-profile" src={state.attachmentUrl} />
           <h5 className="user-name-profile">
@@ -65,7 +69,7 @@ function Profile(props) {
             </a>
           </div>
           <Link to={`/product/new/${props.loggedInUser._id}`} type="button">
-          <i className="fas fa-plus">Adicione uma arte</i>
+          <i className="icon-add-art fas fa-plus"> Add uma arte</i>
           </Link>
         </div>
 {/* inicio do card de produto */}

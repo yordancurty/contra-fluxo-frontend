@@ -64,8 +64,8 @@ const ProductEdit = () => {
 
     return (
         <div>
-            <h1>Edite aqui o seu Produto: </h1>
-            <hr></hr>
+            <h1 className="h1-product-edit-form">Edite aqui o seu Produto: </h1>
+            <hr className="hr-product-form"></hr>
             <ProductForm
                 handleSubmit={handleSubmit}
                 handleFileUpload={handleFileUpload}
