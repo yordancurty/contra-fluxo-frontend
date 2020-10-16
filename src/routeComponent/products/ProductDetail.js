@@ -21,7 +21,7 @@ function ProductDetail(){
     useEffect(() => {
         (async function fetchProduct() {
         try {
-            const result = await api.get(`/product`);
+            const result = await api.get(`/product/${id}`);
 
             // const result = await api.get(`/product/${id}`);
 
