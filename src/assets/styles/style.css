@@ -9,6 +9,16 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/* --------- feed --------- */
+
+.div-mother-feed{
+    width: 100vw;
+    height: 82.4vh;
+}
+
+
+
+
 
 /* --------- navbar --------- */
 nav {
