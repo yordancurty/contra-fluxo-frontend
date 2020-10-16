@@ -31,19 +31,26 @@ import Cart from "../components/cart/Cart";
 
 function App() {
 
-const [loggedInUser, setLoggedInUser] = useState({
-  user: {},
-  token: "",
+const [loggedInUser, setLoggedInUser] = useState({});
+
+const [profile, setProfile] = useState({
+  name: "",
+  email: "",
+  aboutMe: "",
+  attachment: "",
+  attachmentUrl: "",
+  facebook: "",
+  instagram: "",
+  twitter: "",
+  youtube: "",
 });
 
 useEffect(() => {
+  console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
   setLoggedInUser({...storedUser.user});
 }, []);
 
-const handleLoginSubmit = (data) => {
- setLoggedInUser({token: data.token, user: {...data.user}}); 
-};
 
 const handleLogout = () => {
   setLoggedInUser({user: {}, token: ""});
@@ -52,28 +59,32 @@ const handleLogout = () => {
   return (
     <div>
     <BrowserRouter>
-
-      <Navbar user={loggedInUser} />
+    <Navbar user={loggedInUser} />
       {loggedInUser._id ? (
-            <Switch>
-               <PrivateRoute exact path="/logout" component={Logout} user={loggedInUser} handleLogout={handleLogout}/>
+            <Switch>            
+               <PrivateRoute exact path="/logout" component={Logout} user={loggedInUser} setUser={setLoggedInUser} handleLogout={handleLogout}/>
        <PrivateRoute
             exact
             path="/profile"
             component={Profile}
             user={loggedInUser}
+            profileState={profile}
+            setProfile={setProfile}
           />    
       <PrivateRoute
             path="/profile/edit"
             exact
             component={ProfileEdit}
             user={loggedInUser}
+            profileState={profile}
+            setProfile={setProfile}
           />
       <PrivateRoute
-            path="/profile/delete"
+            path="/profile/delete/:id"
             exact
             component={ProfileDelete}
             user={loggedInUser}
+            setUser={setLoggedInUser} 
           />                
       <PrivateRoute
             path="/product/new/:userId"
@@ -107,7 +118,7 @@ const handleLogout = () => {
                   return (
                     <LoginForm
                       {...props}
-                      setUserState={handleLoginSubmit}
+                      setLoggedInUser={setLoggedInUser}
                     />
                   );
                 }}
@@ -121,7 +132,6 @@ const handleLogout = () => {
               </Route>
             </Switch>
           )}
-
       <Footer />
     </BrowserRouter>
   </div>

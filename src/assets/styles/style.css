@@ -844,10 +844,6 @@ padding: 2rem 5rem 2rem 5rem;
 display: flex;
 justify-content: center;
 }
-
-.form-product-main{
-
-}
  
  .form-product{
  width: 35rem; 
@@ -883,3 +879,32 @@ border-radius: 0%;
  .form-control {
     border-radius: 0%;
  }
+
+ .modal {
+    display: block !important;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+
+.container-profile-form{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container-profile-box-form{
+    width: 40rem;
+}
+
+.h1-profile-form{
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    font-size: 2rem;
+    background-color:  #ffd600;
+    width: 225px;
+    text-align: center;
+}
+
+.link-logout{
+  
+}

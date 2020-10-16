@@ -6,8 +6,7 @@ function PrivateRoute({ component: Component, user, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        if (user.user._id) {
-          console.log("PRIVATE ROUTE USER => ", user);
+        if (user._id) {
           return <Component {...props} {...rest}  loggedInUser={user} />;
         } else {
           return (
