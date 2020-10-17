@@ -15,8 +15,8 @@ import Logout from "../routeComponent/auth/Logout";
 import Profile from "../routeComponent/profile/Profile";
 import ProfileEdit from "../routeComponent/profile/ProfileEdit";
 import ProfileDelete from "../routeComponent/profile/ProfileDelete";
-
 import Cart from "../components/cart/Cart";
+import ThankYou from "../components/ThankYou";
 
 
 
@@ -25,6 +25,8 @@ import ProductEdit from "../routeComponent/products/ProductEdit";
 import ProductDetail from "../routeComponent/products/ProductDetail";
 import ProductFeed from "../routeComponent/products/ProductFeed";
 import ProductDelete from "../routeComponent/products/ProductDelete";
+
+
 
 
 const testeString1 = "batatinha restrita";
@@ -146,6 +148,7 @@ const handleLogout = () => {
                     );
                   }}
               />
+             <Route exact path="/thankYou" component={ThankYou} />
              <Route>
                 <Redirect to="/profile" />
               </Route>
@@ -165,6 +168,7 @@ const handleLogout = () => {
                 }}
               />
               <Route exact path="/" component={Homepage} />
+              
               <Route exact path="/product/all"  component={ProductFeed} />
               <Route 
                 exact path="/product/:id"  
@@ -192,6 +196,7 @@ const handleLogout = () => {
                     );
                   }}
               />
+              <Route exact path="/thankYou" component={ThankYou} />
               <Route>
                 <Redirect to="/login" />
               </Route>

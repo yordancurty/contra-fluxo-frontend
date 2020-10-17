@@ -93,6 +93,9 @@ nav {
 .destaque-amarelo{
     background-color: #ffd600;
 }
+
+
+
 /* --------- destaques/homepage--------- */
 
 .homepage-destaques{
@@ -163,6 +166,7 @@ nav {
     align-self: center;
     padding-top: 20px;
 }
+
 
 /* --------- manifesto/homepage --------- */
 
@@ -342,7 +346,17 @@ color: #000000;
 }
 @media (min-width: 900px) and (max-width: 1380px) {
 
+
+
     /* ----------------- cart ---------------------*/
+    .cartTitle{
+        background-color: #ffd600;
+        
+    }
+
+    .chekoutResumeBox{
+        background-color: #ffd600;
+    }
     
     button[className*=btn] {
         width: 30px;
@@ -358,6 +372,7 @@ color: #000000;
       .plus-btn img {
         margin-top: 2px;
       }
+      
 
     .quantity {
         padding-top: 20px;
@@ -384,6 +399,19 @@ color: #000000;
         border: 1px solid black;
         width: 70vw;
         height: 70vh;
+    }
+
+    .finalizarCompraButton{
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 2rem;
+        background-color: #ffffff;
+        padding: 0.1rem;
+    }
+
+    .finalizarCompraButton a{
+        color: #080909;
+        text-decoration: none;
     }
 
     /* ----------------- profile ---------------------*/
@@ -955,3 +983,23 @@ border-radius: 0%;
     text-align: center;
 }
 
+
+
+
+/* -----------  Product Details ------------*/
+
+.geralContainer{
+
+}
+
+.titleProdDetail{
+
+}
+
+.productImg{
+
+}
+
+.productInfo{
+    
+}
