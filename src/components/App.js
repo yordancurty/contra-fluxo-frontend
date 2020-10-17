@@ -29,7 +29,20 @@ import Cart from "../components/cart/Cart";
 
 
 
+
 function App() {
+  const [products, setProducts] = useState([]);
+  
+const [data, setData] = useState({});
+const [q, setQ] = useState("")
+
+useEffect(() => {
+  fetch(products)
+  .then((json) => setData(json))
+}, [])
+
+
+
 
 const [loggedInUser, setLoggedInUser] = useState({});
 
@@ -45,8 +58,8 @@ const [profile, setProfile] = useState({
   youtube: "",
 });
 
-const [products, setProducts] = useState([]);
 
+console.log("aqqqqqqqqqqqquuuuuuuuuiiiiiiiii!!!!!!",products)
 useEffect(() => {
   console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
@@ -158,17 +171,15 @@ const handleLogout = () => {
                 }} />
               <Route exact path="/product/:id"  component={ProductDetail} /> 
               <Route exact path="/signup" component={SignupForm} />
-              <Route exact path="/cart"  component={Cart} />
+              {/* <Route exact path="/cart"  component={Cart} /> */}
               <Route>
                 <Redirect to="/login" />
               </Route>
             </Switch>
-          )}
+         
       <Footer />
     </BrowserRouter>
   </div>
   )}
 
 export default App;
-
-
