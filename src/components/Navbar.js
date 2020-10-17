@@ -31,6 +31,9 @@ function Navbar(props) {
 
                         </div>
                     </li>
+                    <li className="nav-item mr-4">
+                    <Link className="navbar-brand menu-item" to="/cart">Cart</Link>
+                    </li>
                </ul>
             </nav>
        

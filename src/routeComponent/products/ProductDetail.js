@@ -3,7 +3,19 @@ import { useParams, Link } from "react-router-dom";
 
 import api from "../../apis/index";
 
-function ProductDetail(){
+
+
+
+function ProductDetail(props){
+
+
+    
+
+    const checkout = props.checkout;
+    const setCheckout = props.setCheckout;
+
+    console.log("props = ", props)
+    
 
     const { id } = useParams();
 
@@ -18,33 +30,56 @@ function ProductDetail(){
         price: 0,
     });
 
+    console.log("product = ", product)
+
     useEffect(() => {
         (async function fetchProduct() {
         try {
-            const result = await api.get(`/product`);
+            const result = await api.get(`/product/${id}`);
 
             // const result = await api.get(`/product/${id}`);
 
-            setProduct({ ...result.data[0] });
+            setProduct({ ...result.data});
         } catch (err) {
             console.error(err);
         }
         })();   
     }, []);
 
+    const passProdToCheckoutState = () => {
+        props.setCheckout((previouState) =>{
+            const prevState = [...previouState, product]
+            console.log(prevState)
+            return [...prevState];
+        })
+    }
+
     return (
-        <div>
+        <div className="geralContainer">
 
-            <h1>Product Detail</h1>
-            <hr></hr>
+             <div className="titleProdDetail">
+                  <h1>Product Detail</h1>
+                  <hr></hr>
+             </div>
+             <div className="prodAllInfo">
+                  <div className="productImg">
+                      <img src={product.attachment} alt="Product attachment" />
+                  </div>
 
-            <div>
-                <h3>{product.title}</h3>
-                <p>{product.description}</p>
-                <img src={product.attachment} alt="Product attachment" />
-            </div>
+                  <div className="productInfo">
+                      <h3>{product.title}</h3>
+                      {/* <h4>NOME DO ARTISTA AQUI</h4> */}
+                      <p className="descriptionProdDet">{product.description}</p>
+                      <p>Tipo: {product.artType}</p>
+                      <p><strong>Especificações:</strong></p>
+                      <p>{product.specifications}</p>
+                      <p>Valor: {product.price},00</p>
+                      {product._id ?  <button className="addToCartBtn" type="button" onClick={passProdToCheckoutState}> Adicionar ao Carrinho</button> : null}
+                  </div>
+             </div>
+             
 
-            <Link to={`/projects/${product.project}`}>Back to project</Link>
+             <Link to={`/product/all`}>Back to products</Link>
         </div>
     );
 

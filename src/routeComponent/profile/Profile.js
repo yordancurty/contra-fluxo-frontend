@@ -4,6 +4,7 @@ import api from "../../apis/index";
 
 function Profile(props) {
 
+
   //info do perfil editado
   const state = props.profileState
 
