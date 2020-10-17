@@ -61,17 +61,23 @@ function ProductDetail(props){
                   <h1>Product Detail</h1>
                   <hr></hr>
              </div>
-             <div className="productImg">
-                  <img src={product.attachment} alt="Product attachment" />
+             <div className="prodAllInfo">
+                  <div className="productImg">
+                      <img src={product.attachment} alt="Product attachment" />
+                  </div>
+
+                  <div className="productInfo">
+                      <h3>{product.title}</h3>
+                      {/* <h4>NOME DO ARTISTA AQUI</h4> */}
+                      <p className="descriptionProdDet">{product.description}</p>
+                      <p>Tipo: {product.artType}</p>
+                      <p><strong>Especificações:</strong></p>
+                      <p>{product.specifications}</p>
+                      <p>Valor: {product.price},00</p>
+                      {product._id ?  <button className="addToCartBtn" type="button" onClick={passProdToCheckoutState}> Adicionar ao Carrinho</button> : null}
+                  </div>
              </div>
-             <div className="productInfo">
-                  <h3>{product.title}</h3>
-                  <p>{product.description}</p>
-                  <p>Tipo: {product.artType}</p>
-                  <p>Especificações: {product.specifications}</p>
-                  <p>Valor: {product.price},00</p>
-                  {product._id ?  <button type="button" onClick={passProdToCheckoutState}> Adicionar ao Carrinho</button> : null}
-             </div>
+             
 
              <Link to={`/product/all`}>Back to products</Link>
         </div>
