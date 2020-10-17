@@ -15,19 +15,22 @@ import Logout from "../routeComponent/auth/Logout";
 import Profile from "../routeComponent/profile/Profile";
 import ProfileEdit from "../routeComponent/profile/ProfileEdit";
 import ProfileDelete from "../routeComponent/profile/ProfileDelete";
-
 import Cart from "../components/cart/Cart";
+import ThankYou from "../components/ThankYou";
 
 
 
- import ProductCreate from "../routeComponent/products/ProductCreate";
- import ProductEdit from "../routeComponent/products/ProductEdit";
- import ProductDetail from "../routeComponent/products/ProductDetail";
- import ProductFeed from "../routeComponent/products/ProductFeed";
- import ProductDelete from "../routeComponent/products/ProductDelete";
+import ProductCreate from "../routeComponent/products/ProductCreate";
+import ProductEdit from "../routeComponent/products/ProductEdit";
+import ProductDetail from "../routeComponent/products/ProductDetail";
+import ProductFeed from "../routeComponent/products/ProductFeed";
+import ProductDelete from "../routeComponent/products/ProductDelete";
 
 
 
+
+const testeString1 = "batatinha restrita";
+const testeString2 = "batatinha publica";
 
 
 function App() {
@@ -67,6 +70,15 @@ useEffect(() => {
 }, []);
 
 
+
+const [checkout, setCheckout] = useState([])
+
+
+useEffect(() => {
+  console.log(checkout)
+}, [checkout])
+
+
 const handleLogout = () => {
   setLoggedInUser({user: {}, token: ""});
 };
@@ -84,6 +96,7 @@ const handleLogout = () => {
             component={Profile}
             user={loggedInUser}
             profileState={profile}
+            testeString2={testeString2}
             setProfile={setProfile}
             productsState={products}
             setProducts={setProducts}
@@ -124,6 +137,35 @@ const handleLogout = () => {
             user={loggedInUser}
           />          
               <Route exact path="/" component={Homepage} />
+
+              
+              <Route 
+               exact path="/product/:id"
+               render={(props) => {
+                return (
+                  <ProductDetail
+                    {...props}
+                    setLoggedInUser={setLoggedInUser}
+                    checkout={checkout} 
+                    setCheckout={setCheckout}
+                  />
+                );
+              }}
+                />
+              <Route 
+                  exact path="/cart"
+                  render={(props) => {
+                    return (
+                      <Cart
+                        {...props}
+                        checkout={checkout} 
+                        setCheckout={setCheckout}
+                      />
+                    );
+                  }}
+              />
+             <Route exact path="/thankYou" component={ThankYou} />
+
               <Route exact path="/product/all"         
               render={(props) => {
                   return (
@@ -135,10 +177,8 @@ const handleLogout = () => {
                     />
                   );
                 }} />
-              <Route exact path="/product/:id"  component={ProductDetail} /> 
               
-              <Route exact path="/product/:id"  component={ProductDetail} />
-              <Route exact path="/cart"  component={Cart} />
+
              <Route>
                 <Redirect to="/profile" />
               </Route>
@@ -158,20 +198,40 @@ const handleLogout = () => {
                 }}
               />
               <Route exact path="/" component={Homepage} />
-              <Route exact path="/product/all"         
-              render={(props) => {
+
+              
+              <Route exact path="/product/all"  component={ProductFeed} />
+              <Route 
+                exact path="/product/:id"  
+                render={(props) => {
                   return (
-                    <ProductFeed
-                    productsState={products} 
-                    setProducts={setProducts}
+                    <ProductDetail
                       {...props}
-                      
+                      setLoggedInUser={setLoggedInUser}
+                      checkout={checkout} 
+                      setCheckout={setCheckout}
                     />
                   );
-                }} />
-              <Route exact path="/product/:id"  component={ProductDetail} /> 
+                }}
+              /> 
+
               <Route exact path="/signup" component={SignupForm} />
-              {/* <Route exact path="/cart"  component={Cart} /> */}
+              
+                <Route 
+                  exact path="/cart"
+                  render={(props) => {
+                    return (
+                      <Cart
+                        {...props}
+                        checkout={checkout} 
+                        setCheckout={setCheckout}
+                      />
+                    );
+                  }}
+              />
+              <Route exact path="/thankYou" component={ThankYou} />
+
+              
               <Route>
                 <Redirect to="/login" />
               </Route>
