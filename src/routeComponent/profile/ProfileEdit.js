@@ -3,12 +3,12 @@ import { useHistory } from "react-router-dom";
 import api from "../../apis/index";
 
 function ProfileEdit(props) {
-  console.log(props);
+
   const history = useHistory();
 
   const { _id } = props.loggedInUser;
 
-  const profile = props.profileState
+  const profile = {...props.profileState, attachmentUrl: ""}
 
   const [isLoadingFetch, setIsLoadingFetch] = useState(false);
   const [isLoadingSend, setIsLoadingSend] = useState(false);
@@ -19,11 +19,9 @@ function ProfileEdit(props) {
     (async function fetchUser() {
       try {
         const response = await api.get(`/profile`);
-
-
         setIsLoadingFetch(false);
-
-        props.setProfile({ ...profile, ...response.data.user });
+//precisa zerar o attachementUrl para não cair no if da linha 35.
+        props.setProfile({ ...profile, ...response.data, attachmentUrl: "" });
       } catch (err) {
         setIsLoadingFetch(false);
         props.setProfile({ ...profile, error: err.message });
@@ -33,9 +31,12 @@ function ProfileEdit(props) {
 
   useEffect(() => {
     if (profile.attachmentUrl) {
+  /*     console.log("FOTO --->", profile.attachmentUrl) */
       (async function fetchUpload() {
         try {
           const response = await api.patch(`/profile/${_id}`, profile);
+
+          console.log("RESPONSE -->", response)
 
           setIsLoadingSend(false);
 
@@ -49,6 +50,8 @@ function ProfileEdit(props) {
 
   const handleChange = (event) => {
     if (event.currentTarget.files) {
+      console.log("UPDATE --->", profile)
+/*       console.log("FOTO --->", profile.attachmentUrl) */
       return props.setProfile({
         ...profile,
         [event.currentTarget.name]: event.currentTarget.files[0],
