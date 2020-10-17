@@ -29,7 +29,20 @@ import Cart from "../components/cart/Cart";
 
 
 
+
 function App() {
+  const [products, setProducts] = useState([]);
+  
+const [data, setData] = useState({});
+const [q, setQ] = useState("")
+
+useEffect(() => {
+  fetch(products)
+  .then((json) => setData(json))
+}, [])
+
+
+
 
 const [loggedInUser, setLoggedInUser] = useState({});
 
@@ -45,8 +58,8 @@ const [profile, setProfile] = useState({
   youtube: "",
 });
 
-const [products, setProducts] = useState([]);
 
+console.log("aqqqqqqqqqqqquuuuuuuuuiiiiiiiii!!!!!!",products)
 useEffect(() => {
   console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
@@ -111,7 +124,19 @@ const handleLogout = () => {
             user={loggedInUser}
           />          
               <Route exact path="/" component={Homepage} />
-              <Route exact path="/product/all"  component={ProductFeed} />
+              <Route exact path="/product/all"         
+              render={(props) => {
+                  return (
+                    <ProductFeed
+                    productsState={products} 
+                    setProducts={setProducts}
+                      {...props}
+                      
+                    />
+                  );
+                }} />
+              <Route exact path="/product/:id"  component={ProductDetail} /> 
+              
               <Route exact path="/product/:id"  component={ProductDetail} />
               <Route exact path="/cart"  component={Cart} />
              <Route>
@@ -133,10 +158,20 @@ const handleLogout = () => {
                 }}
               />
               <Route exact path="/" component={Homepage} />
-              <Route exact path="/product/all"  component={ProductFeed} />
+              <Route exact path="/product/all"         
+              render={(props) => {
+                  return (
+                    <ProductFeed
+                    productsState={products} 
+                    setProducts={setProducts}
+                      {...props}
+                      
+                    />
+                  );
+                }} />
               <Route exact path="/product/:id"  component={ProductDetail} /> 
               <Route exact path="/signup" component={SignupForm} />
-              <Route exact path="/cart"  component={Cart} />
+              {/* <Route exact path="/cart"  component={Cart} /> */}
               <Route>
                 <Redirect to="/login" />
               </Route>
@@ -148,5 +183,3 @@ const handleLogout = () => {
   )}
 
 export default App;
-
-
