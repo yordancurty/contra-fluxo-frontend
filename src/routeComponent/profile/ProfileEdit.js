@@ -8,7 +8,7 @@ function ProfileEdit(props) {
 
   const { _id } = props.loggedInUser;
 
-  const profile = props.profileState
+  const profile = {...props.profileState, attachmentUrl: ""}
 
   const [isLoadingFetch, setIsLoadingFetch] = useState(false);
   const [isLoadingSend, setIsLoadingSend] = useState(false);
@@ -20,10 +20,10 @@ function ProfileEdit(props) {
       try {
         const response = await api.get(`/profile`);
 
-
+console.log("PROFILE EDIT", response)
         setIsLoadingFetch(false);
-
-        props.setProfile({ ...profile, ...response.data.user });
+//precisa zerar o attachementUrl para não cair no if da linha 35.
+        props.setProfile({ ...profile, ...response.data, attachmentUrl: "" });
       } catch (err) {
         setIsLoadingFetch(false);
         props.setProfile({ ...profile, error: err.message });
@@ -33,6 +33,7 @@ function ProfileEdit(props) {
 
   useEffect(() => {
     if (profile.attachmentUrl) {
+          console.log("PROFILE" ,profile);
       (async function fetchUpload() {
         try {
           const response = await api.patch(`/profile/${_id}`, profile);
