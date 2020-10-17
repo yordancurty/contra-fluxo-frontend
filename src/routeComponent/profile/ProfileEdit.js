@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import api from "../../apis/index";
 
 function ProfileEdit(props) {
-  console.log(props);
+
   const history = useHistory();
 
   const { _id } = props.loggedInUser;
@@ -19,8 +19,6 @@ function ProfileEdit(props) {
     (async function fetchUser() {
       try {
         const response = await api.get(`/profile`);
-
-console.log("PROFILE EDIT", response)
         setIsLoadingFetch(false);
 //precisa zerar o attachementUrl para não cair no if da linha 35.
         props.setProfile({ ...profile, ...response.data, attachmentUrl: "" });
@@ -33,10 +31,12 @@ console.log("PROFILE EDIT", response)
 
   useEffect(() => {
     if (profile.attachmentUrl) {
-          console.log("PROFILE" ,profile);
+  /*     console.log("FOTO --->", profile.attachmentUrl) */
       (async function fetchUpload() {
         try {
           const response = await api.patch(`/profile/${_id}`, profile);
+
+          console.log("RESPONSE -->", response)
 
           setIsLoadingSend(false);
 
@@ -50,6 +50,8 @@ console.log("PROFILE EDIT", response)
 
   const handleChange = (event) => {
     if (event.currentTarget.files) {
+      console.log("UPDATE --->", profile)
+/*       console.log("FOTO --->", profile.attachmentUrl) */
       return props.setProfile({
         ...profile,
         [event.currentTarget.name]: event.currentTarget.files[0],

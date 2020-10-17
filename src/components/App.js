@@ -114,6 +114,8 @@ const handleLogout = () => {
             path="/product/edit/:id"
             component={ProductEdit}
             user={loggedInUser}
+            productsState={products}
+            setProducts={setProducts}
           />
       <PrivateRoute
             exact
@@ -135,6 +137,9 @@ const handleLogout = () => {
                 }} />
               <Route exact path="/product/:id"  component={ProductDetail} /> 
               <Route>
+              <Route exact path="/product/:id"  component={ProductDetail} />
+              <Route exact path="/cart"  component={Cart} />
+             <Route>
                 <Redirect to="/profile" />
               </Route>
             </Switch>
@@ -171,12 +176,10 @@ const handleLogout = () => {
                 <Redirect to="/login" />
               </Route>
             </Switch>
-          )}
+         
       <Footer />
     </BrowserRouter>
   </div>
   )}
 
 export default App;
-
-
