@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import photoProfile from "../../../src/photo-card.jpg";
 import { Link } from "react-router-dom";
@@ -154,4 +153,3 @@ function Cart(props) {
   );
 }
 export default Cart;
-

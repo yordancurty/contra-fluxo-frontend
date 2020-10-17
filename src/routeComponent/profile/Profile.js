@@ -12,12 +12,14 @@ function Profile(props) {
   //info dos produtos criados por esse usuário
   const products = props.productsState
 
+  const { _id } = props.loggedInUser;
+
   useEffect(() => {
     (async function fetchUser() {
       try {
-        const response = await api.get("/profile");
+        const response = await api.get("/profile/");
 
-        const productResponse = await api.get(`/product`);
+        const productResponse = await api.get(`/product/${_id}`);
 
         props.setProfile({ ...response.data});
 
