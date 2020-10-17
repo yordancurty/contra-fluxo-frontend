@@ -11,8 +11,16 @@ function ProductFeed(props){
   
   const products = [ ...props.productsState];
   
+const [data, setData] = useState({});
 
+const [q, setQ] = useState("")
 
+useEffect(() => {
+  fetch(products)
+  
+}, [products])
+  // const filterArtesVisuais = props.products.find({artType: 'Artes Visuais'});
+  // console.log(filterArtesVisuais)
 
  
   console.log(props)
@@ -38,18 +46,7 @@ function ProductFeed(props){
           }
         })();
       }, []);
-    
-
-           
-
- 
-    //    const [category, setCategory] = useState();
-    //    const [subCategory, setSubCategory] = useState()
-        
-
                       
-
-
     return (
         <div className="div-mother-feed">
 
@@ -60,10 +57,10 @@ function ProductFeed(props){
                 <p>Artes visuais</p>
                 <p></p>
 
-               
+                <input type="text" value={q} onChange={(e) => setQ(e.target.value)}></input>
             </div>
             <div className="profile-products-cards">
-            {products.map((product) => <div className="products-profile">
+            {products.map((product) => <div data={data[0]} className="products-profile">
             <div className="card card-profile">
             <img
               className="card-img-top" src={product.mediaUrl} alt="Card image cap"/>

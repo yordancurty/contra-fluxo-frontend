@@ -136,7 +136,7 @@ const handleLogout = () => {
                   );
                 }} />
               <Route exact path="/product/:id"  component={ProductDetail} /> 
-              <Route>
+              
               <Route exact path="/product/:id"  component={ProductDetail} />
               <Route exact path="/cart"  component={Cart} />
              <Route>
@@ -176,7 +176,7 @@ const handleLogout = () => {
                 <Redirect to="/login" />
               </Route>
             </Switch>
-         
+          )}
       <Footer />
     </BrowserRouter>
   </div>
