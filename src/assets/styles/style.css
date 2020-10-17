@@ -93,6 +93,22 @@ nav {
 .destaque-amarelo{
     background-color: #ffd600;
 }
+
+.btn-homepage{
+    color: black;
+    text-decoration: none;
+    background-color:  #ffd600;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0;
+
+}
+
+.btn-container-homepage{
+    display: flex;
+    justify-content: center;
+    margin-top: -0.6rem;
+}
+
 /* --------- destaques/homepage--------- */
 
 .homepage-destaques{
