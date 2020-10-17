@@ -78,16 +78,23 @@ function Profile(props) {
           <div className="card card-profile">
             <img className="card-img-top" src={product.mediaUrl} alt="Card image cap"/>
             <div className="card-body-product card-body">
-              <Link to="/product/edit/:id">
-                <i className="edit-icon-profile-card far fa-edit"></i>
-              </Link>
-              <Link to={`/product/delete/${product._id}`}>
-                <i className="delete-icon-profile-card far fa-trash-alt"></i>
-              </Link>
+             
               <h5 className="card-title card-title-profile">{product.title}  | <span className="product-price">R${product.price},00</span></h5>
               <p className="card-text card-text-profile">{product.description}</p>
-              <Link to={`/product/${product._id}`} className="link-detail-product-card">Saiba mais</Link>
+            
+              <Link to="/product/edit/:id">
+                <i className="edit-icon-profile-card far fa-edit align-self-end"></i>
+              </Link>
+              <Link to={`/product/delete/${product._id}`}>
+                <i className="align-self-end delete-icon-profile-card far fa-trash-alt"></i>
+              </Link>
             </div>
+          
+          
+            <div className="d-flex justify-content-center">
+           
+              <Link to={`/product/${product._id}`} className="link-detail-product-card">Saiba mais</Link>
+              </div>
             </div>
           </div>)}
           </div>       
