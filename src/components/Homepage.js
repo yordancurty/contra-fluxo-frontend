@@ -1,8 +1,12 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import photoChamada from "../photo-chamada.jpg";
 import photoCard from "../photo-card.jpg";
 import photoManifesto from "../photo-manifesto.jpg"
+import book from "../../src/capa-de-livro.jpg";
+import ceramica from '../../src/ceramica.jpg';
+import tela from '../../src/tela.jpg';
+
 function Homepage() {
   return (
     <div className="homepage-container container-fluid p-0">
@@ -40,36 +44,39 @@ function Homepage() {
           <div className="col-10 d-flex justify-content-around">
 
           <div className="card ">
-            <img className="card-img-top" src={photoCard} alt="Card image cap" />
+            <img className="card-img-top" src={book} alt="Card image cap" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Livro</h5>
               <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Livro de poesias produzido de forma independente e artesanal.
               </p>
-              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+              <div className="btn-container-homepage">
+              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              </div>
             </div>
           </div>
           <div className="card">
-            <img className="card-img-top" src={photoCard} alt="Card image cap" />
+            <img className="card-img-top" src={ceramica} alt="Card image cap" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Escultura</h5>
               <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Escultura feita em cerâmica feita manualmente a partir de bases de argila.
               </p>
-              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+              <div className="btn-container-homepage">
+              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              </div>
             </div>
           </div>
           <div className="card">
-            <img className="card-img-top" src={photoCard} alt="Card image cap" />
+            <img className="card-img-top" src={tela} alt="Card image cap" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Pintura em tela</h5>
               <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+               Pintura a mão feita com tinta a óleo sobre tela de pano.
               </p>
-              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+              <div className="btn-container-homepage">
+              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              </div>
             </div>
           </div>
             {/* <div className="col-1">

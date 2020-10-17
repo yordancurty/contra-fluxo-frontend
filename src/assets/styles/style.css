@@ -10,6 +10,16 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/* --------- feed --------- */
+
+.div-mother-feed{
+    width: 100vw;
+    height: 82.4vh;
+}
+
+
+
+
 
 /* --------- navbar --------- */
 nav {
@@ -94,6 +104,21 @@ nav {
     background-color: #ffd600;
 }
 
+
+.btn-homepage{
+    color: black;
+    text-decoration: none;
+    background-color:  #ffd600;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0;
+
+}
+
+.btn-container-homepage{
+    display: flex;
+    justify-content: center;
+    margin-top: -0.6rem;
+}
 
 
 /* --------- destaques/homepage--------- */
@@ -560,7 +585,8 @@ color: #000000;
     
 }
     .card-text-profile{
-        font-size: 10px!important;
+        font-size: 11px!important;
+  
     }
 
     .card-profile{
@@ -574,11 +600,17 @@ color: #000000;
    box-sizing: border-box; 
     }
 
+.card-body-product{
+    box-sizing: border-box !important;
+
+}    
+
 .products-profile{
     height: 21.5rem !important;
     width: 15rem !important;
     display: flex;
     justify-content: center;
+ 
 }
 
 .profile-products-cards{
@@ -587,6 +619,7 @@ color: #000000;
     justify-content: center;
     padding: 0.5rem;
     box-sizing: border-box;
+    
 }
 
 .icons-edit-delete-profile{
@@ -609,8 +642,7 @@ color: #000000;
     color: black;
     padding-top: 2rem;
 }
-
-   
+  
     /* ----------------- login/signin ----------------- */
    .logo{
        width: 55px!important;
@@ -1057,6 +1089,7 @@ border-radius: 0%;
 
 
 
+
 /* -----------  Product Details ------------*/
 
 .geralContainer{
@@ -1068,18 +1101,6 @@ border-radius: 0%;
     display:flex
 }
 
-.titleProdDetail{
-
-}
-
-.productImg{
-
-}
-
-.productInfo{
-
-}
-
 .descriptionProdDet{
     width: 30vw;
 }
@@ -1087,3 +1108,27 @@ border-radius: 0%;
 .addToCartBtn{
     border: 1px solid #ffd600;
 }
+
+.link-detail-product-card{
+    background-color:  #ffd600;
+    border: none;
+    padding: 0.3rem;
+    color:black;
+    margin-left: 2.6rem; 
+    font-size: 0.7rem;
+}
+
+.product-price {
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.card-title-profile{
+    font-size: 0.9rem;
+}
+
+.profile-card-name-product{
+    margin-top: -0.2rem;
+}
+
+
