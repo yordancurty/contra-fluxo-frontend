@@ -134,8 +134,8 @@ nav {
   height: 65vh;
 }
 .card{
-    width: 25rem;
-    height: 37.7rem;
+    width: 24rem;
+    height: 35rem;
     border-color: black;
     border-radius: 0;
 }
@@ -488,6 +488,7 @@ color: #000000;
 }
     .card-text-profile{
         font-size: 11px!important;
+        margin-bottom: -10px;
   
     }
 
@@ -872,11 +873,16 @@ background: #FFD600;
 .profile{
     width: 25vw;
     height: 79.9vh;
+ 
+    background-color: rgb(246, 246, 246);
+
 }
 .products-profile{
 
-    width: 75vw;
-    height: 79.9vh
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
 }
  .div-mother-profile{
      width: 100vw;
@@ -885,26 +891,102 @@ background: #FFD600;
 
  .photo-profile{
      
-     width: 150px;
-     height: 150px;
-     border-radius: 40px;
-     margin-left: 50px;
+    margin-bottom: 20px!important;
+    width: 140px!important;
+    height: 140px!important;
+    border-radius: 40px;
+    margin-left: 0px!important;
  }
 
  .card-profile{
      /* Rectangle 26 */
 
-
-width: 201px;
-height: 302px;
-
-
-background: #FFFFFF;
-border: 1px solid #000000;
-box-sizing: border-box;
+     width: 300px!important;
+     height: 420px!important;
+     margin: 20px;
+     
+     background: #FFFFFF;
+     border: 1px solid #000000;
+     box-sizing: border-box; 
 
  }
 
+ .social-media-icons-profile{
+    width: 45px;
+    color: black;
+    
+}
+
+
+.user-name-profile{
+    font-weight: lighter;
+    
+}
+.card-profile p{
+    
+    margin-bottom: 0!important;
+    border-bottom: 1px solid black;
+}
+    .card-text-profile{
+        font-size: 11px!important;
+       
+        
+       
+  
+    }
+.card-title-profile{
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+ .icon-add-art{
+    color: black;
+    padding-top: 2rem;
+}
+ .icon-trash-profile{
+    color: black;
+}
+.icon-edit-profile{
+    color: black;
+}
+ .icons-edit-delete-profile{
+    padding-left: 8rem;
+    display: flex;
+}
+.icon-edit-profile{
+    padding-right: 0.1rem;
+}
+
+.delete-icon-profile-card{
+    
+    position: none;
+    left: none;
+    top: none;
+    color:black;
+    
+}
+
+.edit-icon-profile-card{
+    
+    position: none;
+    left: none;
+    top: none;
+    color:black;
+}
+ .profile-products-cards{
+     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    
+}
+
+/* .card-body-product{
+    box-sizing: border-box !important;
+
+}     */
  /* --------- Formulário de edit e create do produto --------- */
 
  .product-form-box{
@@ -990,11 +1072,14 @@ border-radius: 0%;
 
 .link-detail-product-card{
     background-color:  #ffd600;
+    
     border: none;
     padding: 0.3rem;
     color:black;
-    margin-left: 2.6rem; 
-    font-size: 0.7rem;
+    /* margin-left: 2.6rem;  */
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
 }
 
 .product-price {
