@@ -101,6 +101,8 @@ const handleLogout = () => {
             path="/product/edit/:id"
             component={ProductEdit}
             user={loggedInUser}
+            productsState={products}
+            setProducts={setProducts}
           />
       <PrivateRoute
             exact
