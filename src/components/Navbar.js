@@ -17,7 +17,7 @@ function Navbar(props) {
                     <Link className="navbar-brand menu-item" to="#">Sobre nós</Link>
                     </li>
                     <li className="nav-item mr-4">
-                    <Link className="navbar-brand menu-item" to="/product/all">Artes</Link>
+                    <Link className="navbar-brand menu-item" to="/product-all">Artes</Link>
                     </li>
                     <li className="nav-item mr-4">
                     <Link className="navbar-brand menu-item" to="/login">Login</Link>

@@ -9,7 +9,7 @@ import App from "../../components/App"
 
 function ProductFeed(props){
   
-  const products = [ ...props.productsState];
+  
   
 
 
@@ -39,7 +39,7 @@ function ProductFeed(props){
         })();
       }, []);
     
-
+      const products = [ ...props.productsState];
            
 
  

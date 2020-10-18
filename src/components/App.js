@@ -166,7 +166,7 @@ const handleLogout = () => {
               />
              <Route exact path="/thankYou" component={ThankYou} />
 
-              <Route exact path="/product/all"         
+              <Route exact path="/product-all"         
               render={(props) => {
                   return (
                     <ProductFeed
@@ -200,7 +200,17 @@ const handleLogout = () => {
               <Route exact path="/" component={Homepage} />
 
               
-              <Route exact path="/product/all"  component={ProductFeed} />
+              <Route exact path="/product-all"         
+              render={(props) => {
+                  return (
+                    <ProductFeed
+                    productsState={products} 
+                    setProducts={setProducts}
+                      {...props}
+                      
+                    />
+                  );
+                }} />
               <Route 
                 exact path="/product/:id"  
                 render={(props) => {
