@@ -35,12 +35,9 @@ const testeString2 = "batatinha publica";
 
 function App() {
   const [products, setProducts] = useState([]);
+
+
   
-
-
-
-
-
 
 const [loggedInUser, setLoggedInUser] = useState({});
 
