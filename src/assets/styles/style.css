@@ -178,6 +178,7 @@ nav {
     height: 70%;
     align-self: center;
     padding-top: 20px;
+    object-fit: cover;
 }
 
 /* --------- manifesto/homepage --------- */
@@ -405,6 +406,7 @@ color: #000000;
     /* ----------------- profile ---------------------*/
     .card-img-top{
         margin-top: -10px;
+        object-fit: cover;
     }
     .profile-title{
         margin-top: 20px;
@@ -999,3 +1001,64 @@ border-radius: 0%;
 .profile-card-name-product{
     margin-top: -0.2rem;
 }
+
+.addToCartBtn{
+    border: 1px solid #ffd600;
+}
+
+/* -------------------- THANK YOU PAGE ---------------------*/
+
+.thakYouMsg{
+    color:rgb(253, 253, 253);
+    width: 425px;
+    border-bottom: 1px solid rgb(77, 77, 77);
+    margin: 50px 0;
+    text-align:center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+
+.thankYouDiv{
+    border: 1px solid rgb(148, 148, 148);
+    background-color: #ffd600;
+    border-radius: 5px;
+    width: 530px;
+    margin-left: 400px;
+    margin-top: 100px;
+    margin-bottom:200px;
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pInDiv{
+    font-size: 20px;
+    text-align: center;
+    width: 400px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+}
+
+/* .divOfH1{
+    margin: 50px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

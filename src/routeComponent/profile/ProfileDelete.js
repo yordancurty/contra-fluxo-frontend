@@ -14,7 +14,7 @@ const ProfileDelete = (props) => {
             localStorage.removeItem("loggedInUser");
             props.setUser({});
 
-            console.log(response);
+            //console.log(response);
             
             history.push("/");
 

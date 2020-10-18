@@ -7,30 +7,46 @@ function Profile(props) {
 
 
   //info do perfil editado
-  const state = props.profileState
+  const state = props.profileState;
 
 
   //info dos produtos criados por esse usuário
-  const products = props.productsState
+  const products = props.productsState;
 
   const { _id } = props.loggedInUser;
+
+  //console.log("props profile =", props);
 
   useEffect(() => {
     (async function fetchUser() {
       try {
-        const response = await api.get("/profile/");
+
+        const response = await api.get("/profile");
 
         const productResponse = await api.get(`/product/user/${_id}`);
 
+        const products = productResponse.data !== null ? productResponse.data : [];
+
+        //console.log("productResponse = ", productResponse)
+
         props.setProfile({ ...response.data});
 
-        props.setProducts([ ...productResponse.data]);
+        //console.log(response.data)
+
+        // props.setProducts([ ...productResponse.data]);
+        
+        props.setProducts([ ...products]);
+
+        
+
+        //console.log("productResponse = ", productResponse)
+
       } catch (err) {
         console.error(err);
       }
     })();
   }, [_id, props]);
-console.log(props.profileState)
+//console.log(props.profileState)
 
 
   return (

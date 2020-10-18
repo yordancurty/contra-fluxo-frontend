@@ -10,7 +10,7 @@ const DeleteProject = () => {
     useEffect(() => {async function fetchData() {
       try {
         const result = await api.delete(`product/${id}`);
-        console.log(result)
+        //console.log(result)
   
         history.push("/profile");
       } catch (err) {

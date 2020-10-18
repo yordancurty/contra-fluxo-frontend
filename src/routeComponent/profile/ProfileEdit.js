@@ -31,12 +31,12 @@ function ProfileEdit(props) {
 
   useEffect(() => {
     if (profile.attachmentUrl) {
-  /*     console.log("FOTO --->", profile.attachmentUrl) */
+  /*     //console.log("FOTO --->", profile.attachmentUrl) */
       (async function fetchUpload() {
         try {
           const response = await api.patch(`/profile/${_id}`, profile);
 
-          console.log("RESPONSE -->", response)
+          //console.log("RESPONSE -->", response)
 
           // setIsLoadingSend(false);
 
@@ -50,8 +50,8 @@ function ProfileEdit(props) {
 
   const handleChange = (event) => {
     if (event.currentTarget.files) {
-      console.log("UPDATE --->", profile)
-/*       console.log("FOTO --->", profile.attachmentUrl) */
+      //console.log("UPDATE --->", profile)
+/*       //console.log("FOTO --->", profile.attachmentUrl) */
       return props.setProfile({
         ...profile,
         [event.currentTarget.name]: event.currentTarget.files[0],

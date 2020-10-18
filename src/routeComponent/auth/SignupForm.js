@@ -35,7 +35,7 @@ function SignupForm() {
         event.preventDefault();
       
         const response = await api.post("/signup", state)
-        console.log(response) 
+        //console.log(response) 
         setState({...state, loading: false})
           history.push("/profile") 
 

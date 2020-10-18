@@ -31,7 +31,7 @@ async function handleSubmit(data){
 
      const response = await api.post(`/product/${userId}`, {...data});
 
-     console.log(response)
+     //console.log(response)
      
      history.push(`/profile`)
 
@@ -48,7 +48,7 @@ async function handleFileUpload(data) {
 
         const response = await api.post("/media-upload", uploadData);
 
-        console.log(response.data.media);
+        //console.log(response.data.media);
     return response.data.media;
 
     } catch(err){
