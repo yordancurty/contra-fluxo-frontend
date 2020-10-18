@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/index";
-import photoCard from "../../../src/photo-card.jpg";
 
 function Profile(props) {
-  console.log(props)
+
 
   //info do perfil editado
   const state = props.profileState
 
+
   //info dos produtos criados por esse usuário
   const products = props.productsState
+
+  const { _id } = props.loggedInUser;
 
   useEffect(() => {
     (async function fetchUser() {
       try {
-        const response = await api.get("/profile");
+        const response = await api.get("/profile/");
 
-        const productResponse = await api.get("/product");
-
-        console.log("PRODUCT" ,productResponse);
+        const productResponse = await api.get(`/product/${_id}`);
 
         props.setProfile({ ...response.data});
 
@@ -38,7 +38,7 @@ function Profile(props) {
           <hr></hr>
           <div className="icons-edit-delete-profile">
             <div className="icon-edit-profile">
-          <Link to="/profile/edit" >
+          <Link to={`profile/edit`} >
           <i className="icon-edit-profile far fa-edit"></i>
           </Link>
           </div>
@@ -77,17 +77,24 @@ function Profile(props) {
           {products.map((product) => <div key={product._id} className="products-profile">
           <div className="card card-profile">
             <img className="card-img-top" src={product.mediaUrl} alt="Card image cap"/>
-            <div className="card-body">
+            <div className="card-body-product card-body">
+             
+              <h5 className="card-title card-title-profile">{product.title}  | <span className="product-price">R${product.price},00</span></h5>
+              <p className="card-text card-text-profile">{product.description}</p>
+            
               <Link to="/product/edit/:id">
-                <i className="edit-icon-profile-card far fa-edit"></i>
+                <i className="edit-icon-profile-card far fa-edit align-self-end"></i>
               </Link>
               <Link to={`/product/delete/${product._id}`}>
-                <i className="delete-icon-profile-card far fa-trash-alt"></i>
+                <i className="align-self-end delete-icon-profile-card far fa-trash-alt"></i>
               </Link>
-              <h5 className="card-title card-title-profile">{product.title}</h5>
-              <p className="card-text card-text-profile">{product.description}</p>
-              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
             </div>
+          
+          
+            <div className="d-flex justify-content-center">
+           
+              <Link to={`/product/${product._id}`} className="link-detail-product-card">Saiba mais</Link>
+              </div>
             </div>
           </div>)}
           </div>       

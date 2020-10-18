@@ -32,7 +32,20 @@ import ProductDelete from "../routeComponent/products/ProductDelete";
 const testeString1 = "batatinha restrita";
 const testeString2 = "batatinha publica";
 
+
 function App() {
+  const [products, setProducts] = useState([]);
+  
+const [data, setData] = useState({});
+const [q, setQ] = useState("")
+
+useEffect(() => {
+  fetch(products)
+  .then((json) => setData(json))
+}, [])
+
+
+
 
 const [loggedInUser, setLoggedInUser] = useState({});
 
@@ -48,8 +61,8 @@ const [profile, setProfile] = useState({
   youtube: "",
 });
 
-const [products, setProducts] = useState([]);
 
+console.log("aqqqqqqqqqqqquuuuuuuuuiiiiiiiii!!!!!!",products)
 useEffect(() => {
   console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
@@ -114,6 +127,8 @@ const handleLogout = () => {
             path="/product/edit/:id"
             component={ProductEdit}
             user={loggedInUser}
+            productsState={products}
+            setProducts={setProducts}
           />
       <PrivateRoute
             exact
@@ -122,7 +137,8 @@ const handleLogout = () => {
             user={loggedInUser}
           />          
               <Route exact path="/" component={Homepage} />
-              <Route exact path="/product/all"  component={ProductFeed} />
+
+              
               <Route 
                exact path="/product/:id"
                render={(props) => {
@@ -149,6 +165,20 @@ const handleLogout = () => {
                   }}
               />
              <Route exact path="/thankYou" component={ThankYou} />
+
+              <Route exact path="/product-all"         
+              render={(props) => {
+                  return (
+                    <ProductFeed
+                    productsState={products} 
+                    setProducts={setProducts}
+                      {...props}
+                      
+                    />
+                  );
+                }} />
+              
+
              <Route>
                 <Redirect to="/profile" />
               </Route>
@@ -168,8 +198,19 @@ const handleLogout = () => {
                 }}
               />
               <Route exact path="/" component={Homepage} />
+
               
-              <Route exact path="/product/all"  component={ProductFeed} />
+              <Route exact path="/product-all"         
+              render={(props) => {
+                  return (
+                    <ProductFeed
+                    productsState={products} 
+                    setProducts={setProducts}
+                      {...props}
+                      
+                    />
+                  );
+                }} />
               <Route 
                 exact path="/product/:id"  
                 render={(props) => {
@@ -183,8 +224,10 @@ const handleLogout = () => {
                   );
                 }}
               /> 
+
               <Route exact path="/signup" component={SignupForm} />
-              <Route 
+              
+                <Route 
                   exact path="/cart"
                   render={(props) => {
                     return (
@@ -197,6 +240,8 @@ const handleLogout = () => {
                   }}
               />
               <Route exact path="/thankYou" component={ThankYou} />
+
+              
               <Route>
                 <Redirect to="/login" />
               </Route>
@@ -208,5 +253,3 @@ const handleLogout = () => {
   )}
 
 export default App;
-
-

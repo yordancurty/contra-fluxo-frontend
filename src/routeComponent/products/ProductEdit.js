@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import api from "../../apis/index";
 import ProductForm from "./ProductForm";
 
-const ProductEdit = () => {
+const ProductEdit = (props) => {
 
     const history = useHistory();
-    const { id } = useParams();
+    const { _id } = props.loggedInUser;
 
     const [state, setState] = useState({
         title: "",
@@ -27,7 +27,7 @@ const ProductEdit = () => {
 
     useEffect(() => {
         (async function fetchProduct() {
-        const result = await api.get(`/product/${id}`);
+        const result = await api.get(`/product/${_id}`, state);
 
         setState({ ...result.data[0] });
         })();
@@ -36,7 +36,7 @@ const ProductEdit = () => {
     async function handleSubmit(data) {
         try {
         
-        const result = await api.patch(`/product/${id}`, data);
+        const result = await api.patch(`/product/${_id}`, data);
 
         history.push("/");
         } catch (err) {

@@ -6,7 +6,7 @@ import React from 'react';
 function ThankYou(){
 
 return (
-        <div>
+        <div className="thankYouDiv">
             <h1>
                 <strong className ="thakYouMsg">
                 Obrigado pela compra! Graças a você mais um artista 
