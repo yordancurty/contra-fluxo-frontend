@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import photoProfile from "../../../src/photo-card.jpg";
+// import photoProfile from "../../../src/photo-card.jpg";
 import { Link } from "react-router-dom";
-import photoCard from "../../../src/photo-card.jpg";
-import minus from "../../../src/minus.svg";
-import plus from "../../../src/plus.svg";
+// import photoCard from "../../../src/photo-card.jpg";
+// import minus from "../../../src/minus.svg";
+// import plus from "../../../src/plus.svg";
 
 
 

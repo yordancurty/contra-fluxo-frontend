@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../apis/index";
 
@@ -10,24 +10,24 @@ function ProfileEdit(props) {
 
   const profile = {...props.profileState, attachmentUrl: ""}
 
-  const [isLoadingFetch, setIsLoadingFetch] = useState(false);
-  const [isLoadingSend, setIsLoadingSend] = useState(false);
+  // const [isLoadingFetch, setIsLoadingFetch] = useState(false);
+  // const [isLoadingSend, setIsLoadingSend] = useState(false);
 
 
   useEffect(() => {
-    setIsLoadingFetch(true);
+    // setIsLoadingFetch(true);
     (async function fetchUser() {
       try {
         const response = await api.get(`/profile`);
-        setIsLoadingFetch(false);
+        // setIsLoadingFetch(false);
 //precisa zerar o attachementUrl para não cair no if da linha 35.
         props.setProfile({ ...profile, ...response.data, attachmentUrl: "" });
       } catch (err) {
-        setIsLoadingFetch(false);
+        // setIsLoadingFetch(false);
         props.setProfile({ ...profile, error: err.message });
       }
     })();
-  }, []);
+  }, [profile, props]);
 
   useEffect(() => {
     if (profile.attachmentUrl) {
@@ -38,7 +38,7 @@ function ProfileEdit(props) {
 
           console.log("RESPONSE -->", response)
 
-          setIsLoadingSend(false);
+          // setIsLoadingSend(false);
 
           history.push("/profile");
         } catch (err) {
@@ -46,7 +46,7 @@ function ProfileEdit(props) {
         }
       })();
     }
-  }, [profile]);
+  }, [_id, history, profile]);
 
   const handleChange = (event) => {
     if (event.currentTarget.files) {
@@ -78,7 +78,7 @@ function ProfileEdit(props) {
   };
 
   const handleSubmit = async (event) => {
-    setIsLoadingSend(true);
+    // setIsLoadingSend(true);
 
     try {
       event.preventDefault();
@@ -88,7 +88,7 @@ function ProfileEdit(props) {
       props.setProfile({ ...profile, attachmentUrl: fileUrl });
     } catch (err) {
       console.error(err);
-      setIsLoadingSend(false);
+      // setIsLoadingSend(false);
       props.setProfile({ ...profile, error: err.message });
     }
   };
