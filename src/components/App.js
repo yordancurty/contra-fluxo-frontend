@@ -55,7 +55,7 @@ const [profile, setProfile] = useState({
 
 
 useEffect(() => {
-  // console.log(profile)
+  // //console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
   setLoggedInUser({...storedUser.user});
 }, []);
@@ -66,7 +66,7 @@ const [checkout, setCheckout] = useState([])
 
 
 useEffect(() => {
-  console.log(checkout)
+  //console.log(checkout)
 }, [checkout])
 
 

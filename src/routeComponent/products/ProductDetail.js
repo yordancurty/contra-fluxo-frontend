@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 import api from "../../apis/index";
 
@@ -14,7 +14,7 @@ function ProductDetail(props){
     // const checkout = props.checkout;
     // const setCheckout = props.setCheckout;
 
-    console.log("props = ", props)
+    //console.log("props = ", props)
     
 
     const { id } = useParams();
@@ -30,26 +30,29 @@ function ProductDetail(props){
         price: 0,
     });
 
-    console.log("product = ", product)
+    //console.log("product = ", product)
 
     useEffect(() => {
         (async function fetchProduct() {
         try {
             const result = await api.get(`/product/${id}`);
-
+            
             // const result = await api.get(`/product/${id}`);
 
             setProduct({ ...result.data});
+          
+           
         } catch (err) {
             console.error(err);
         }
         })();   
     }, [id]);
-
+    const history = useHistory();
     const passProdToCheckoutState = () => {
         props.setCheckout((previouState) =>{
             const prevState = [...previouState, product]
-            console.log(prevState)
+            //console.log(prevState)
+            history.push("/cart")
             return [...prevState];
         })
     }
@@ -79,7 +82,7 @@ function ProductDetail(props){
              </div>
              
 
-             <Link to={`/product/all`}>Back to products</Link>
+             <Link to={`/product-all`}>Back to products</Link>
         </div>
     );
 

@@ -53,7 +53,7 @@ const ProductEdit = (props) => {
     
             const response = await api.post("/media-upload", uploadData);
     
-            console.log(response.data.media);
+            //console.log(response.data.media);
         return response.data.media;
     
         } catch(err){

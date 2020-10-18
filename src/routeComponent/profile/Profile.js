@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/index";
+import PhotoCard from "../../photo-card.jpg"
 
 function Profile(props) {
 
@@ -14,7 +15,7 @@ function Profile(props) {
 
   const { _id } = props.loggedInUser;
 
-  console.log("props profile =", props);
+  //console.log("props profile =", props);
 
   useEffect(() => {
     (async function fetchUser() {
@@ -26,11 +27,11 @@ function Profile(props) {
 
         const products = productResponse.data !== null ? productResponse.data : [];
 
-        console.log("productResponse = ", productResponse)
+        //console.log("productResponse = ", productResponse)
 
         props.setProfile({ ...response.data});
 
-        console.log(response.data)
+        //console.log(response.data)
 
         // props.setProducts([ ...productResponse.data]);
         
@@ -38,14 +39,14 @@ function Profile(props) {
 
         
 
-        console.log("productResponse = ", productResponse)
+        //console.log("productResponse = ", productResponse)
 
       } catch (err) {
         console.error(err);
       }
     })();
   }, [_id, props]);
-console.log(props.profileState)
+//console.log(props.profileState)
 
 
   return (
@@ -66,7 +67,7 @@ console.log(props.profileState)
           </Link>
           </div>
           </div>
-          <img className="photo-profile" src={state.attachmentUrl} alt="profile"/>
+          <img className="photo-profile" src={PhotoCard} alt="profile"/>
           <h5 className="user-name-profile">
             <span className="destaque-amarelo">{state.name}</span>
           </h5>

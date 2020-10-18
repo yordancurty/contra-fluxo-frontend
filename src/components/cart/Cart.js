@@ -54,7 +54,7 @@ function Cart(props) {
     totalCart += elem.price;
     taxaEntrega = Math.floor((totalCart/9))
     totalPrice = totalCart + taxaEntrega;
-    console.log("elem =", elem)
+    //console.log("elem =", elem)
   })
 
   // const 
@@ -68,8 +68,8 @@ function Cart(props) {
   //   setCheckout(elem.quantity += 1)
   // }
 
-  console.log("props = ", props)
-  console.log("totalPrice =", totalPrice)
+  //console.log("props = ", props)
+  //console.log("totalPrice =", totalPrice)
   
 
   return (

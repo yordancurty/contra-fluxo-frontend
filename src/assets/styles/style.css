@@ -10,16 +10,6 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-/* --------- feed --------- */
-
-.div-mother-feed{
-    width: 100vw;
-    height: 82.4vh;
-}
-
-
-
-
 
 /* --------- navbar --------- */
 nav {
@@ -104,7 +94,6 @@ nav {
     background-color: #ffd600;
 }
 
-
 .btn-homepage{
     color: black;
     text-decoration: none;
@@ -119,7 +108,6 @@ nav {
     justify-content: center;
     margin-top: -0.6rem;
 }
-
 
 /* --------- destaques/homepage--------- */
 
@@ -136,8 +124,8 @@ nav {
   height: 65vh;
 }
 .card{
-    width: 24rem;
-    height: 35rem;
+    width: 25rem;
+    height: 37.7rem;
     border-color: black;
     border-radius: 0;
 }
@@ -190,8 +178,8 @@ nav {
     height: 70%;
     align-self: center;
     padding-top: 20px;
+    object-fit: cover;
 }
-
 
 /* --------- manifesto/homepage --------- */
 
@@ -371,34 +359,7 @@ color: #000000;
 }
 @media (min-width: 900px) and (max-width: 1380px) {
 
-
-
     /* ----------------- cart ---------------------*/
-    
-    .div-mother-cart{
-        height: 79vh;
-        padding-right: 10vw;
-        margin-right: 20vw;
-        
-        
-    }
-    .box-cart{
-        border: 1px solid black;
-        width: 50vw;
-        height: 70vh;
-        padding-right: -10vw;
-        
-        
-    }
-
-    .cartTitle{
-        background-color: #ffd600;
-        width: 490px;
-        text-align: center;
-        margin-left: 6vw;
-        margin-right: 20vw;
-
-    }
     
     button[className*=btn] {
         width: 30px;
@@ -407,21 +368,19 @@ color: #000000;
         border-radius: 6px;
         border: none;
         cursor: pointer;
-    }
-    .minus-btn img {
+      }
+      .minus-btn img {
         margin-bottom: 3px;
-    }
-    .plus-btn img {
+      }
+      .plus-btn img {
         margin-top: 2px;
-    }
-      
+      }
 
     .quantity {
         padding-top: 20px;
         margin-right: 60px;
       }
-
-    .quantity input {
+      .quantity input {
         -webkit-appearance: none;
         border: none;
         text-align: center;
@@ -429,90 +388,25 @@ color: #000000;
         font-size: 16px;
         color: #43484D;
         font-weight: 300;
-    }
+      }
 
     .product-cart-photo{
         width: 60px;
         height: 60px;
-        margin: 0 30px 0 10px;
     }
-    
-
-    .chekoutResumeBox{
-        background-color: #ffd600;
-        margin-right: 50vw;
+    .div-mother-cart{
+        height: 79vh;
+    }
+    .box-cart{
         border: 1px solid black;
-        
+        width: 70vw;
+        height: 70vh;
     }
-
-    .priceInMiniBlock{
-        margin-right: -100px;
-    }
-
-    .lineOfTitles{
-        border: 1px solid black;
-        width: 1000px;
-        padding-left: 200px;
-        margin-left: 100px;
-    }
-    
-    .productsInCart{
-        margin-top: 25px;
-        height: 80px;
-        width: 500px;
-        display: flex;
-        justify-content: space-around;
-        
-    }
-    
-
-    .resumeTitle{
-        width: 400px;
-        padding: 7vh 4vw;
-        border-bottom: 1px solid black;
-    }
-    
-    .custosResumo{
-        margin: 2vw;
-        border-bottom: 1px solid black 
-    }
-
-    .totalAndFinalizeButton{
-        margin: 2vw;
-    }
-
-    .pairTitleAndTable{
-        width: 1000px;
-        border:;
-    }
-
-    .finalizarCompraButton{
-        font-size: 15px;
-        font-weight: 500;
-        border-radius: 2rem;
-        background-color: #ffffff;
-        padding: 0.1rem;
-    }
-
-    .finalizarCompraButton a{
-        color: #080909;
-        text-decoration: none;
-    }
-
-    .prodTitle{
-        padding-left: 200px;
-        
-    }
-
-    .priceTitle{
-        padding-right: 100px;
-        margin-left: 100px;
-    }
-
 
     /* ----------------- profile ---------------------*/
     .card-img-top{
         margin-top: -10px;
+        object-fit: cover;
     }
     .profile-title{
         margin-top: 20px;
@@ -586,7 +480,6 @@ color: #000000;
 }
     .card-text-profile{
         font-size: 11px!important;
-        margin-bottom: -10px;
   
     }
 
@@ -971,16 +864,11 @@ background: #FFD600;
 .profile{
     width: 25vw;
     height: 79.9vh;
- 
-    background-color: rgb(246, 246, 246);
-
 }
 .products-profile{
 
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
+    width: 75vw;
+    height: 79.9vh
 }
  .div-mother-profile{
      width: 100vw;
@@ -989,102 +877,26 @@ background: #FFD600;
 
  .photo-profile{
      
-    margin-bottom: 20px!important;
-    width: 140px!important;
-    height: 140px!important;
-    border-radius: 40px;
-    margin-left: 0px!important;
+     width: 150px;
+     height: 150px;
+     border-radius: 40px;
+     margin-left: 50px;
  }
 
  .card-profile{
      /* Rectangle 26 */
 
-     width: 300px!important;
-     height: 420px!important;
-     margin: 20px;
-     
-     background: #FFFFFF;
-     border: 1px solid #000000;
-     box-sizing: border-box; 
+
+width: 201px;
+height: 302px;
+
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
 
  }
 
- .social-media-icons-profile{
-    width: 45px;
-    color: black;
-    
-}
-
-
-.user-name-profile{
-    font-weight: lighter;
-    
-}
-.card-profile p{
-    
-    margin-bottom: 0!important;
-    border-bottom: 1px solid black;
-}
-    .card-text-profile{
-        font-size: 11px!important;
-       
-        
-       
-  
-    }
-.card-title-profile{
-    font-size: 16px;
-    margin-bottom: 3px;
-}
-
- .icon-add-art{
-    color: black;
-    padding-top: 2rem;
-}
- .icon-trash-profile{
-    color: black;
-}
-.icon-edit-profile{
-    color: black;
-}
- .icons-edit-delete-profile{
-    padding-left: 8rem;
-    display: flex;
-}
-.icon-edit-profile{
-    padding-right: 0.1rem;
-}
-
-.delete-icon-profile-card{
-    
-    position: none;
-    left: none;
-    top: none;
-    color:black;
-    
-}
-
-.edit-icon-profile-card{
-    
-    position: none;
-    left: none;
-    top: none;
-    color:black;
-}
- .profile-products-cards{
-     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    
-}
-
-/* .card-body-product{
-    box-sizing: border-box !important;
-
-}     */
  /* --------- Formulário de edit e create do produto --------- */
 
  .product-form-box{
@@ -1168,39 +980,13 @@ border-radius: 0%;
     text-align: center;
 }
 
-
-
-
-
-/* -----------  Product Details ------------*/
-
-.geralContainer{
-    padding: 10vh 0 5vh 38vw;
-    
-}
-
-.prodAllInfo{
-    display:flex
-}
-
-.descriptionProdDet{
-    width: 30vw;
-}
-
-.addToCartBtn{
-    border: 1px solid #ffd600;
-}
-
 .link-detail-product-card{
     background-color:  #ffd600;
-    
     border: none;
     padding: 0.3rem;
     color:black;
-    /* margin-left: 2.6rem;  */
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    margin-left: 2.6rem; 
+    font-size: 0.7rem;
 }
 
 .product-price {

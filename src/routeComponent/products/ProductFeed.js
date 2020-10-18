@@ -15,7 +15,7 @@ function ProductFeed(props){
 
 
  
-  console.log(props)
+  //console.log(props)
   
 
   
@@ -29,7 +29,7 @@ function ProductFeed(props){
     
             const productResponse = await api.get("/product");
     
-            console.log("PRODUCT" ,productResponse);
+            //console.log("PRODUCT" ,productResponse);
     
     
             props.setProducts([ ...productResponse.data]);
