@@ -11,8 +11,8 @@ function ProductDetail(props){
 
     
 
-    const checkout = props.checkout;
-    const setCheckout = props.setCheckout;
+    // const checkout = props.checkout;
+    // const setCheckout = props.setCheckout;
 
     console.log("props = ", props)
     
@@ -44,7 +44,7 @@ function ProductDetail(props){
             console.error(err);
         }
         })();   
-    }, []);
+    }, [id]);
 
     const passProdToCheckoutState = () => {
         props.setCheckout((previouState) =>{

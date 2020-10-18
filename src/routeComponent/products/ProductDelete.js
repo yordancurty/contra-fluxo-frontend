@@ -10,6 +10,7 @@ const DeleteProject = () => {
     useEffect(() => {async function fetchData() {
       try {
         const result = await api.delete(`product/${id}`);
+        console.log(result)
   
         history.push("/profile");
       } catch (err) {
@@ -18,7 +19,7 @@ const DeleteProject = () => {
     }
     fetchData();
   }
-, [id])
+, [history, id])
     
     return (
       <div>Deletando...</div>

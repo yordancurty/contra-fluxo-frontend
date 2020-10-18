@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import logo from "../../../src/logo.png";
 import { Link } from "react-router-dom";
 import api from "../../apis/index";
-import { useHistory } from "react-router-dom";
 import ErrorAlert from "../../components/ErrorAlert";
 import LoadingButton from "../../components/LoadingButton";
 
 function LoginForm(props) {
-  const history = useHistory();
+  
 
   const [state, setState] = useState({
     email: "",
