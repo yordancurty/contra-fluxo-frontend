@@ -51,7 +51,7 @@ function Homepage() {
                 Livro de poesias produzido de forma independente e artesanal.
               </p>
               <div className="btn-container-homepage">
-              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              <Link to="/product-all" className="btn-homepage btn">Veja mais</Link>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ function Homepage() {
                 Escultura feita em cerâmica feita manualmente a partir de bases de argila.
               </p>
               <div className="btn-container-homepage">
-              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              <Link to="/product-all" className="btn-homepage btn">Veja mais</Link>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ function Homepage() {
                Pintura a mão feita com tinta a óleo sobre tela de pano.
               </p>
               <div className="btn-container-homepage">
-              <Link to="/product/all" className="btn-homepage btn">Veja mais</Link>
+              <Link to="/product-all" className="btn-homepage btn">Veja mais</Link>
               </div>
             </div>
           </div>

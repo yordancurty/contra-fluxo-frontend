@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/index";
+import PhotoCard from "../../photo-card.jpg"
 
 function Profile(props) {
 
@@ -19,7 +20,7 @@ function Profile(props) {
       try {
         const response = await api.get("/profile/");
 
-        const productResponse = await api.get(`/product/${_id}`);
+        const productResponse = await api.get(`/product/user/${_id}`);
 
         props.setProfile({ ...response.data});
 
@@ -50,7 +51,7 @@ console.log(props.profileState)
           </Link>
           </div>
           </div>
-          <img className="photo-profile" src={state.attachmentUrl} alt="profile"/>
+          <img className="photo-profile" src={PhotoCard} alt="profile"/>
           <h5 className="user-name-profile">
             <span className="destaque-amarelo">{state.name}</span>
           </h5>

@@ -79,7 +79,7 @@ function ProductDetail(props){
              </div>
              
 
-             <Link to={`/product/all`}>Back to products</Link>
+             <Link to={`/product-all`}>Back to products</Link>
         </div>
     );
 
