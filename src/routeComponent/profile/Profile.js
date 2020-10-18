@@ -28,7 +28,9 @@ function Profile(props) {
         console.error(err);
       }
     })();
-  }, []);
+  }, [_id, props]);
+console.log(props.profileState)
+
 
   return (
     <div className="div-mother-profile ">
@@ -43,12 +45,12 @@ function Profile(props) {
           </Link>
           </div>
           <div className="icon-delete-profile">
-          <Link to={`profile/delete/${props.loggedInUser._id}`} type="button">
+          <Link to={`profile/delete/${_id}`} type="button">
             <i className="icon-trash-profile far fa-trash-alt"></i>
           </Link>
           </div>
           </div>
-          <img className="photo-profile" src={state.attachmentUrl} />
+          <img className="photo-profile" src={state.attachmentUrl} alt="profile"/>
           <h5 className="user-name-profile">
             <span className="destaque-amarelo">{state.name}</span>
           </h5>
@@ -68,7 +70,7 @@ function Profile(props) {
               <i className="social-media-icons-profile fab fa-youtube-square fa-2x"></i>
             </a>
           </div>
-          <Link to={`/product/new/${props.loggedInUser._id}`} type="button">
+          <Link to={`/product/new/${_id}`} type="button">
           <i className="icon-add-art fas fa-plus"> Add uma arte</i>
           </Link>
         </div>
