@@ -7,13 +7,12 @@ function ThankYou(){
 
 return (
         <div className="thankYouDiv">
-            <h1>
-                <strong className ="thakYouMsg">
-                Obrigado pela compra! Graças a você mais um artista 
-                independente porá continuar a divulgar sua arte
-                </strong>
-            </h1>
-            <p></p>
+            <div className="divOfH1">
+                <h1 className ="thakYouMsg" >
+                    Obrigado pela compra! 
+                </h1>
+            </div>
+            <p className="pInDiv">Graças a você mais um artista independente poderá continuar a divulgar sua arte.</p>
         </div>
     );
 };

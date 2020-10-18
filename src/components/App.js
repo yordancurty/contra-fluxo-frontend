@@ -35,17 +35,8 @@ const testeString2 = "batatinha publica";
 
 function App() {
   const [products, setProducts] = useState([]);
+
   
-const [data, setData] = useState({});
-const [q, setQ] = useState("")
-
-useEffect(() => {
-  fetch(products)
-  .then((json) => setData(json))
-}, [])
-
-
-
 
 const [loggedInUser, setLoggedInUser] = useState({});
 
@@ -62,7 +53,6 @@ const [profile, setProfile] = useState({
 });
 
 
-console.log("aqqqqqqqqqqqquuuuuuuuuiiiiiiiii!!!!!!",products)
 useEffect(() => {
   console.log(profile)
   const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
