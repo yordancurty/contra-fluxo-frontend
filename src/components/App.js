@@ -93,7 +93,7 @@ const handleLogout = () => {
             setProducts={setProducts}
           />    
       <PrivateRoute
-            path="/profile/edit"
+            path="/profile/edit/:id"
             exact
             component={ProfileEdit}
             user={loggedInUser}

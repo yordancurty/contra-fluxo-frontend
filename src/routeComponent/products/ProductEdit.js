@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import api from "../../apis/index";
 import ProductForm from "./ProductForm";
 
 const ProductEdit = (props) => {
 
     const history = useHistory();
-    const { _id } = props.loggedInUser;
+    const { id } = useParams();
 
     const [state, setState] = useState({
         title: "",
@@ -20,6 +20,7 @@ const ProductEdit = (props) => {
     });
 
     useEffect(() => {
+        console.log("STATE" ,state)
         if (state.mediaUrl) {
             handleSubmit(state);
         }
@@ -27,21 +28,27 @@ const ProductEdit = (props) => {
 
     useEffect(() => {
         (async function fetchProduct() {
-        const result = await api.get(`/product/${_id}`, state);
+        const result = await api.get(`/product/${id}`);
 
-        setState({ ...result.data[0] });
+        setState({ ...result.data });
         })();
     }, []);
 
-    async function handleSubmit(data) {
-        try {
-        
-        const result = await api.patch(`/product/${_id}`, data);
+    async function handleSubmit(event) {
 
-        history.push("/");
+        try {
+            event.preventDefault();
+        
+        const result = await api.patch(`/product/${id}`, state);
+
+        history.push("/profile");
         } catch (err) {
         console.error(err);
         }
+    }
+
+    function handleChange(event) {
+        setState({...state, [ event.currentTarget.name ]: event.currentTarget.value})
     }
 
 
@@ -68,6 +75,7 @@ const ProductEdit = (props) => {
             <hr className="hr-product-form"></hr>
             <ProductForm
                 handleSubmit={handleSubmit}
+                handleChange={handleChange}
                 handleFileUpload={handleFileUpload}
                 state={state}
                 setState={setState}
