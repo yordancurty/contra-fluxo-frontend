@@ -33,7 +33,7 @@ function Profile(props) {
 
         //console.log(response.data)
 
-        // props.setProducts([ ...productResponse.data]);
+        //props.setProducts([ ...productResponse.data]);
         
         props.setProducts([ ...products]);
 
@@ -45,14 +45,14 @@ function Profile(props) {
         console.error(err);
       }
     })();
-  }, [_id, props]);
+  }, []);
 //console.log(props.profileState)
 
 
   return (
-    <div className="div-mother-profile ">
+    <div className="div-mother-profile">
       <div className="d-flex">
-        <div className="profile d-flex flex-column align-items-center ">
+        <div className="profile d-flex flex-column align-items-center">
           <h3 className="align-self-start profile-title">Perfil</h3>
           <hr></hr>
           <div className="icons-edit-delete-profile">
@@ -101,7 +101,7 @@ function Profile(props) {
               <h5 className="card-title card-title-profile">{product.title}  | <span className="product-price">R${product.price},00</span></h5>
               <p className="card-text card-text-profile">{product.description}</p>
             
-              <Link to="/product/edit/:id">
+              <Link to={`/product/edit/${product._id}`}>
                 <i className="edit-icon-profile-card far fa-edit align-self-end"></i>
               </Link>
               <Link to={`/product/delete/${product._id}`}>

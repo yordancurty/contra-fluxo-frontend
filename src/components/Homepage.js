@@ -47,7 +47,7 @@ function Homepage() {
             <img className="card-img-top" src={book} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">Livro</h5>
-              <p className="card-text">
+              <p className="card-text card-home ">
                 Livro de poesias produzido de forma independente e artesanal.
               </p>
               <div className="btn-container-homepage">
@@ -59,7 +59,7 @@ function Homepage() {
             <img className="card-img-top" src={ceramica} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">Escultura</h5>
-              <p className="card-text">
+              <p className="card-text card-home">
                 Escultura feita em cerâmica feita manualmente a partir de bases de argila.
               </p>
               <div className="btn-container-homepage">
@@ -71,7 +71,7 @@ function Homepage() {
             <img className="card-img-top" src={tela} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">Pintura em tela</h5>
-              <p className="card-text">
+              <p className="card-text card-home">
                Pintura a mão feita com tinta a óleo sobre tela de pano.
               </p>
               <div className="btn-container-homepage">

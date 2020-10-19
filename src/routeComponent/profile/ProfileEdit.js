@@ -8,7 +8,7 @@ function ProfileEdit(props) {
 
   const { _id } = props.loggedInUser;
 
-  const profile = {...props.profileState, attachmentUrl: ""}
+  const profile = {...props.profileState }
 
   // const [isLoadingFetch, setIsLoadingFetch] = useState(false);
   // const [isLoadingSend, setIsLoadingSend] = useState(false);
@@ -21,40 +21,41 @@ function ProfileEdit(props) {
         const response = await api.get(`/profile`);
         // setIsLoadingFetch(false);
 //precisa zerar o attachementUrl para não cair no if da linha 35.
-        props.setProfile({ ...profile, ...response.data, attachmentUrl: "" });
+        props.setProfile({ ...profile, ...response.data });
       } catch (err) {
         // setIsLoadingFetch(false);
         props.setProfile({ ...profile, error: err.message });
       }
     })();
-  }, [profile, props]);
+  }, []);
 
-  useEffect(() => {
-    if (profile.attachmentUrl) {
-  /*     //console.log("FOTO --->", profile.attachmentUrl) */
-      (async function fetchUpload() {
-        try {
-          const response = await api.patch(`/profile/${_id}`, profile);
+  // useEffect(() => {
+  //   if (profile.attachmentUrl) {
+  //      console.log("FOTO --->", profile.attachmentUrl) 
+  //     (async function fetchUpload() {
+  //       try {
+  //         const response = await api.patch(`/profile/${_id}`, profile);
 
-          //console.log("RESPONSE -->", response)
+  //         console.log("RESPONSE -->", response)
 
-          // setIsLoadingSend(false);
+  //         // setIsLoadingSend(false);
 
-          history.push("/profile");
-        } catch (err) {
-          console.error(err);
-        }
-      })();
-    }
-  }, [_id, history, profile]);
+  //         history.push("/profile");
+  //       } catch (err) {
+  //         console.error(err);
+  //       }
+  //     })();
+  //   }
+  // }, [_id, history, profile]);
 
   const handleChange = (event) => {
+    console.log(event.currentTarget.files)
     if (event.currentTarget.files) {
       //console.log("UPDATE --->", profile)
 /*       //console.log("FOTO --->", profile.attachmentUrl) */
       return props.setProfile({
         ...profile,
-        [event.currentTarget.name]: event.currentTarget.files[0],
+    attatchment: event.currentTarget.files[0],
       });
     }
     return props.setProfile({
@@ -70,7 +71,7 @@ function ProfileEdit(props) {
       uploadData.append("attachment", file);
 
       const response = await api.post("/attachment-upload", uploadData);
-
+      console.log(response)
       return response.data.attachmentUrl;
     } catch (err) {
       console.error(err);
@@ -84,8 +85,12 @@ function ProfileEdit(props) {
       event.preventDefault();
 
       const fileUrl = await handleFileUpload(profile.attachment);
-
       props.setProfile({ ...profile, attachmentUrl: fileUrl });
+      
+      const response = await api.patch(`/profile/${_id}`, profile);
+
+      console.log("RESPONSE -->", response)
+      history.push("/profile")
     } catch (err) {
       console.error(err);
       // setIsLoadingSend(false);

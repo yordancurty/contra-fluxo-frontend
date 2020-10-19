@@ -61,16 +61,16 @@ function ProductDetail(props){
         <div className="geralContainer">
 
              <div className="titleProdDetail">
-                  <h1>Product Detail</h1>
-                  <hr></hr>
+                  <h1 className="h1-detail ml-5 mt-3">Detalhes</h1>
+                  
              </div>
              <div className="prodAllInfo">
                   <div className="productImg">
-                      <img src={product.attachment} alt="Product attachment" />
+                      <img className="img-detail" src={product.mediaUrl} alt="Product attachment" />
                   </div>
 
                   <div className="productInfo">
-                      <h3>{product.title}</h3>
+                      <h3 >{product.title}</h3>
                       {/* <h4>NOME DO ARTISTA AQUI</h4> */}
                       <p className="descriptionProdDet">{product.description}</p>
                       <p>Tipo: {product.artType}</p>
@@ -80,9 +80,12 @@ function ProductDetail(props){
                       {product._id ?  <button className="addToCartBtn" type="button" onClick={passProdToCheckoutState}> Adicionar ao Carrinho</button> : null}
                   </div>
              </div>
+                  <div className="d-flex justify-content-center">
+
+             <Link to={`/product-all`}><span className="btn-voltar destaque-amarelo">Voltar aos produtos</span></Link>
+                  </div>
              
 
-             <Link to={`/product-all`}>Back to products</Link>
         </div>
     );
 

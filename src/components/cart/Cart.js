@@ -100,7 +100,7 @@ function Cart(props) {
                                 <div>
                                   <img
                                     className="product-cart-photo"
-                                    src={elem.midia}
+                                    src={elem.mediaUrl}
                                     alt="Card image cap"
                                   />
                                 {elem.title}
